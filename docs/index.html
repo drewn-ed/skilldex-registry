@@ -180,10 +180,11 @@ let entries = [];
 let activeType = "";
 const $ = (s) => document.querySelector(s);
 
-fetch("index.json")
-  .then((r) => r.json())
+let loadFailed = false;
+fetch("index.json", { cache: "no-store" })
+  .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
   .then((data) => { entries = data.entries || []; render(); })
-  .catch(() => { $("#count").textContent = "Could not load the registry index."; });
+  .catch(() => { loadFailed = true; render(); });
 
 // Be forgiving when someone pastes a terminal command into the search box:
 // "uvx skilldex search <pdf>" should just search for "pdf".
@@ -218,6 +219,14 @@ function card(e) {
 }
 
 function render() {
+  if (loadFailed) {
+    $("#grid").innerHTML = "";
+    $("#empty").hidden = false;
+    $("#empty").innerHTML =
+      'Could not load the registry — <a onclick="location.reload(true)">reload the page</a>.';
+    $("#count").textContent = "";
+    return;
+  }
   const query = cleanQuery($("#search").value);
   const shown = entries.filter((e) =>
     (!activeType || e.type === activeType) && (!query || matches(e, query)));
