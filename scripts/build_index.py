@@ -18,6 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 REGISTRY = ROOT / "registry"
 INDEX = ROOT / "index.json"
+DOCS_INDEX = ROOT / "docs" / "index.json"  # served by GitHub Pages for the web UI
 README = ROOT / "README.md"
 
 START_MARKER = "<!-- REGISTRY:START -->"
@@ -130,8 +131,9 @@ def main() -> int:
 
     if check:
         stale = []
-        if not INDEX.exists() or INDEX.read_text(encoding="utf-8") != new_index:
-            stale.append("index.json")
+        for target in (INDEX, DOCS_INDEX):
+            if not target.exists() or target.read_text(encoding="utf-8") != new_index:
+                stale.append(str(target.relative_to(ROOT)))
         if README.read_text(encoding="utf-8") != new_readme:
             stale.append("README.md")
         if stale:
@@ -144,8 +146,10 @@ def main() -> int:
         return 0
 
     INDEX.write_text(new_index, encoding="utf-8")
+    DOCS_INDEX.parent.mkdir(exist_ok=True)
+    DOCS_INDEX.write_text(new_index, encoding="utf-8")
     README.write_text(new_readme, encoding="utf-8")
-    print(f"Wrote index.json and README.md ({len(entries)} entries)")
+    print(f"Wrote index.json, docs/index.json, and README.md ({len(entries)} entries)")
     return 0
 
 

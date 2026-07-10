@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>skilldex — Claude Code skills, subagents &amp; MCP servers</title>
+<meta name="description" content="A community registry of Claude Code skills, subagents, and MCP servers. Search, then install with one command.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📇</text></svg>">
+<style>
+  :root {
+    --bg: #fafaf8;
+    --surface: #ffffff;
+    --text: #1a1a1a;
+    --muted: #6b6b66;
+    --border: #e4e4de;
+    --accent: #c96f4a;
+    --accent-soft: #f6e8e1;
+    --skill: #2e7d4f;
+    --skill-bg: #e3f2e9;
+    --agent: #8e44ad;
+    --agent-bg: #f3e8f9;
+    --mcp: #1976a3;
+    --mcp-bg: #e3f0f7;
+    --code-bg: #f0f0ea;
+    --shadow: 0 1px 3px rgba(0,0,0,.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14141a;
+      --surface: #1d1d26;
+      --text: #ececf1;
+      --muted: #9a9aa6;
+      --border: #2c2c38;
+      --accent: #e08a63;
+      --accent-soft: #33231d;
+      --skill: #6fca96;
+      --skill-bg: #1c2f24;
+      --agent: #c48ad9;
+      --agent-bg: #2c2033;
+      --mcp: #6fb6dc;
+      --mcp-bg: #1c2a33;
+      --code-bg: #26262f;
+      --shadow: 0 1px 3px rgba(0,0,0,.35);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px 80px; }
+  header { padding: 56px 0 8px; }
+  h1 { font-size: 2.1rem; margin: 0 0 6px; letter-spacing: -.02em; }
+  h1 .dex { color: var(--accent); }
+  .tagline { color: var(--muted); margin: 0 0 22px; max-width: 46rem; }
+  .quickstart {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--code-bg); border: 1px solid var(--border);
+    border-radius: 10px; padding: 10px 14px; margin-bottom: 30px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .88rem;
+    flex-wrap: wrap;
+  }
+  .quickstart button { flex-shrink: 0; }
+  .controls { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; position: sticky; top: 0; padding: 12px 0; background: var(--bg); z-index: 5; }
+  #search {
+    flex: 1; min-width: 220px;
+    padding: 10px 14px; font-size: 1rem;
+    border: 1px solid var(--border); border-radius: 10px;
+    background: var(--surface); color: var(--text);
+    outline: none;
+  }
+  #search:focus { border-color: var(--accent); }
+  .pill {
+    padding: 9px 16px; border-radius: 999px; cursor: pointer;
+    border: 1px solid var(--border); background: var(--surface);
+    color: var(--muted); font-size: .9rem; font-weight: 500;
+  }
+  .pill.active { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+  #count { color: var(--muted); font-size: .85rem; margin: 0 0 14px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 14px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; padding: 18px; box-shadow: var(--shadow);
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .card-top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+  .card h3 { margin: 0; font-size: 1.02rem; }
+  .badge {
+    font-size: .68rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+    padding: 3px 9px; border-radius: 999px; white-space: nowrap;
+  }
+  .badge.skill { color: var(--skill); background: var(--skill-bg); }
+  .badge.agent { color: var(--agent); background: var(--agent-bg); }
+  .badge.mcp { color: var(--mcp); background: var(--mcp-bg); }
+  .desc { margin: 0; color: var(--muted); font-size: .9rem; flex: 1; }
+  .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tag { font-size: .72rem; color: var(--muted); background: var(--code-bg); border-radius: 6px; padding: 2px 8px; }
+  .install {
+    display: flex; align-items: center; gap: 8px;
+    background: var(--code-bg); border-radius: 8px; padding: 7px 10px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .78rem;
+  }
+  .install code { overflow-x: auto; white-space: nowrap; flex: 1; scrollbar-width: none; }
+  button.copy {
+    border: none; background: none; cursor: pointer; color: var(--muted);
+    font-size: .78rem; padding: 3px 7px; border-radius: 6px; flex-shrink: 0;
+  }
+  button.copy:hover { color: var(--accent); background: var(--accent-soft); }
+  button.copy.done { color: var(--skill); }
+  .meta { font-size: .78rem; color: var(--muted); display: flex; justify-content: space-between; gap: 8px; }
+  .meta a { color: var(--muted); text-decoration: none; border-bottom: 1px dotted var(--border); }
+  .meta a:hover { color: var(--accent); }
+  .empty { color: var(--muted); padding: 40px 0; text-align: center; }
+  footer { margin-top: 56px; padding-top: 22px; border-top: 1px solid var(--border); color: var(--muted); font-size: .86rem; }
+  footer a { color: var(--accent); text-decoration: none; }
+  .cta {
+    margin-top: 40px; padding: 22px; border-radius: 14px;
+    background: var(--accent-soft); border: 1px solid var(--accent);
+  }
+  .cta h2 { margin: 0 0 6px; font-size: 1.05rem; }
+  .cta p { margin: 0; font-size: .9rem; }
+  .cta a { color: var(--accent); font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>skill<span class="dex">dex</span></h1>
+    <p class="tagline">A community registry of <strong>Claude Code</strong> skills, subagents, and MCP servers.
+    Search below, install with one command.</p>
+    <div class="quickstart">
+      <code id="qs">uvx skilldex search &lt;anything&gt;</code>
+      <button class="copy" data-copy="uvx skilldex search ">copy</button>
+    </div>
+  </header>
+
+  <div class="controls">
+    <input id="search" type="search" placeholder="Search skills, agents, MCP servers…" autofocus>
+    <button class="pill active" data-type="">All</button>
+    <button class="pill" data-type="skill">Skills</button>
+    <button class="pill" data-type="agent">Subagents</button>
+    <button class="pill" data-type="mcp">MCP</button>
+  </div>
+
+  <p id="count"></p>
+  <div class="grid" id="grid"></div>
+  <p class="empty" id="empty" hidden>Nothing matches — try fewer words.</p>
+
+  <div class="cta">
+    <h2>Built a skill, subagent, or MCP server?</h2>
+    <p>Get it listed with a one-file pull request —
+    <a href="https://github.com/drewn-ed/skilldex-registry/blob/main/CONTRIBUTING.md">add your entry</a>.
+    CI validates it automatically.</p>
+  </div>
+
+  <footer>
+    <a href="https://github.com/drewn-ed/skilldex">skilldex CLI</a> ·
+    <a href="https://github.com/drewn-ed/skilldex-registry">registry source</a> ·
+    MIT · Not affiliated with Anthropic.
+  </footer>
+</div>
+
+<script>
+const TYPE_LABEL = { skill: "skill", agent: "agent", mcp: "mcp" };
+let entries = [];
+let activeType = "";
+const $ = (s) => document.querySelector(s);
+
+fetch("index.json")
+  .then((r) => r.json())
+  .then((data) => { entries = data.entries || []; render(); })
+  .catch(() => { $("#count").textContent = "Could not load the registry index."; });
+
+function matches(entry, query) {
+  const hay = [entry.id, entry.name, entry.description, (entry.tags || []).join(" ")]
+    .join(" ").toLowerCase();
+  return query.split(/\s+/).filter(Boolean).every((tok) => hay.includes(tok));
+}
+
+function card(e) {
+  const repo = e.source && e.source.repo;
+  const cmd = `uvx skilldex install ${e.id}`;
+  return `<div class="card">
+    <div class="card-top">
+      <h3>${esc(e.name)}</h3>
+      <span class="badge ${e.type}">${TYPE_LABEL[e.type] || e.type}</span>
+    </div>
+    <p class="desc">${esc(e.description || "")}</p>
+    ${(e.tags || []).length ? `<div class="tags">${e.tags.map((t) => `<span class="tag">${esc(t)}</span>`).join("")}</div>` : ""}
+    <div class="install"><code>${esc(cmd)}</code><button class="copy" data-copy="${esc(cmd)}">copy</button></div>
+    <div class="meta">
+      <span>${e.author ? "by " + esc(e.author) : ""}</span>
+      ${repo ? `<a href="https://github.com/${esc(repo)}" target="_blank" rel="noopener">${esc(repo)}</a>` : ""}
+    </div>
+  </div>`;
+}
+
+function render() {
+  const query = $("#search").value.trim().toLowerCase();
+  const shown = entries.filter((e) =>
+    (!activeType || e.type === activeType) && (!query || matches(e, query)));
+  $("#grid").innerHTML = shown.map(card).join("");
+  $("#empty").hidden = shown.length > 0;
+  $("#count").textContent = `${shown.length} of ${entries.length} entries`;
+}
+
+function esc(s) {
+  return String(s).replace(/[&<>"']/g, (c) =>
+    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+$("#search").addEventListener("input", render);
+document.querySelectorAll(".pill").forEach((pill) =>
+  pill.addEventListener("click", () => {
+    document.querySelectorAll(".pill").forEach((p) => p.classList.remove("active"));
+    pill.classList.add("active");
+    activeType = pill.dataset.type;
+    render();
+  }));
+document.addEventListener("click", (ev) => {
+  const btn = ev.target.closest("button.copy");
+  if (!btn) return;
+  navigator.clipboard.writeText(btn.dataset.copy).then(() => {
+    btn.textContent = "copied!";
+    btn.classList.add("done");
+    setTimeout(() => { btn.textContent = "copy"; btn.classList.remove("done"); }, 1200);
+  });
+});
+</script>
+</body>
+</html>

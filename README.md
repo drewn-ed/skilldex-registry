@@ -2,6 +2,8 @@
 
 **A community registry of Claude Code skills, subagents, and MCP servers.**
 
+**Browse it: [drewn-ed.github.io/skilldex-registry](https://drewn-ed.github.io/skilldex-registry/)**
+
 Every entry is a small JSON file, validated by CI, and served as a single
 machine-readable [`index.json`](index.json) consumed by the
 [`skilldex`](https://github.com/drewn-ed/skilldex) CLI:
