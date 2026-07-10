@@ -63,6 +63,13 @@
     flex-wrap: wrap;
   }
   .quickstart button { flex-shrink: 0; }
+  .qs-block { margin-bottom: 30px; }
+  .qs-block .quickstart { margin-bottom: 0; }
+  .qs-label {
+    display: block; font-size: .72rem; font-weight: 600; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 6px;
+  }
+  .empty a { color: var(--accent); cursor: pointer; text-decoration: underline; }
   .controls { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; position: sticky; top: 0; padding: 12px 0; background: var(--bg); z-index: 5; }
   #search {
     flex: 1; min-width: 220px;
@@ -130,14 +137,17 @@
     <h1>skill<span class="dex">dex</span></h1>
     <p class="tagline">A community registry of <strong>Claude Code</strong> skills, subagents, and MCP servers.
     Search below, install with one command.</p>
-    <div class="quickstart">
-      <code id="qs">uvx skilldex search &lt;anything&gt;</code>
-      <button class="copy" data-copy="uvx skilldex search ">copy</button>
+    <div class="qs-block">
+      <span class="qs-label">In your terminal</span>
+      <div class="quickstart">
+        <code id="qs">uvx skilldex install pdf</code>
+        <button class="copy" data-copy="uvx skilldex install pdf">copy</button>
+      </div>
     </div>
   </header>
 
   <div class="controls">
-    <input id="search" type="search" placeholder="Search skills, agents, MCP servers…" autofocus>
+    <input id="search" type="search" placeholder="Type a keyword — pdf, github, web…" autofocus>
     <button class="pill active" data-type="">All</button>
     <button class="pill" data-type="skill">Skills</button>
     <button class="pill" data-type="agent">Subagents</button>
@@ -146,7 +156,9 @@
 
   <p id="count"></p>
   <div class="grid" id="grid"></div>
-  <p class="empty" id="empty" hidden>Nothing matches — try fewer words.</p>
+  <p class="empty" id="empty" hidden>Nothing matches — try a keyword like
+    <a data-q="pdf">pdf</a>, <a data-q="github">github</a>, or <a data-q="web">web</a>,
+    or switch the filter back to <a data-q="">All</a>.</p>
 
   <div class="cta">
     <h2>Built a skill, subagent, or MCP server?</h2>
@@ -173,6 +185,14 @@ fetch("index.json")
   .then((data) => { entries = data.entries || []; render(); })
   .catch(() => { $("#count").textContent = "Could not load the registry index."; });
 
+// Be forgiving when someone pastes a terminal command into the search box:
+// "uvx skilldex search <pdf>" should just search for "pdf".
+const NOISE = new Set(["uvx", "pip", "skilldex", "search", "install", "run"]);
+function cleanQuery(raw) {
+  return raw.toLowerCase().replace(/[<>`"']/g, " ")
+    .split(/\s+/).filter((tok) => tok && !NOISE.has(tok)).join(" ");
+}
+
 function matches(entry, query) {
   const hay = [entry.id, entry.name, entry.description, (entry.tags || []).join(" ")]
     .join(" ").toLowerCase();
@@ -198,7 +218,7 @@ function card(e) {
 }
 
 function render() {
-  const query = $("#search").value.trim().toLowerCase();
+  const query = cleanQuery($("#search").value);
   const shown = entries.filter((e) =>
     (!activeType || e.type === activeType) && (!query || matches(e, query)));
   $("#grid").innerHTML = shown.map(card).join("");
@@ -212,6 +232,17 @@ function esc(s) {
 }
 
 $("#search").addEventListener("input", render);
+$("#empty").addEventListener("click", (ev) => {
+  const link = ev.target.closest("a[data-q]");
+  if (!link) return;
+  $("#search").value = link.dataset.q;
+  if (link.dataset.q === "") {
+    document.querySelectorAll(".pill").forEach((p) =>
+      p.classList.toggle("active", p.dataset.type === ""));
+    activeType = "";
+  }
+  render();
+});
 document.querySelectorAll(".pill").forEach((pill) =>
   pill.addEventListener("click", () => {
     document.querySelectorAll(".pill").forEach((p) => p.classList.remove("active"));
