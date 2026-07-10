@@ -1,0 +1,10 @@
+{
+  "id": "filesystem",
+  "type": "mcp",
+  "name": "Filesystem",
+  "description": "Reference MCP server for secure, configurable file operations within allowed directories.",
+  "source": { "repo": "modelcontextprotocol/servers", "path": "src/filesystem" },
+  "mcp": { "type": "stdio", "command": "npx", "args": ["-y", "@modelcontextprotocol/server-filesystem", "."] },
+  "author": "Model Context Protocol",
+  "tags": ["files", "local"]
+}

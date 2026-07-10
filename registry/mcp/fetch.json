@@ -1,0 +1,10 @@
+{
+  "id": "fetch",
+  "type": "mcp",
+  "name": "Fetch",
+  "description": "Reference MCP server that fetches web pages and converts them to markdown for LLM consumption.",
+  "source": { "repo": "modelcontextprotocol/servers", "path": "src/fetch" },
+  "mcp": { "type": "stdio", "command": "uvx", "args": ["mcp-server-fetch"] },
+  "author": "Model Context Protocol",
+  "tags": ["web", "http", "markdown"]
+}

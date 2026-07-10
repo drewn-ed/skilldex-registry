@@ -1,0 +1,9 @@
+{
+  "id": "skill-creator",
+  "type": "skill",
+  "name": "Skill Creator",
+  "description": "Guides Claude through authoring new skills: structure, frontmatter, progressive disclosure, and packaging.",
+  "source": { "repo": "anthropics/skills", "path": "skills/skill-creator" },
+  "author": "Anthropic",
+  "tags": ["meta", "authoring", "skills"]
+}

@@ -1,0 +1,10 @@
+{
+  "id": "github",
+  "type": "mcp",
+  "name": "GitHub",
+  "description": "GitHub's official remote MCP server: repos, issues, pull requests, and code search.",
+  "source": { "repo": "github/github-mcp-server", "path": "." },
+  "mcp": { "type": "http", "url": "https://api.githubcopilot.com/mcp/" },
+  "author": "GitHub",
+  "tags": ["git", "issues", "pull-requests"]
+}

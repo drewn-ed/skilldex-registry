@@ -1,0 +1,137 @@
+{
+  "version": 1,
+  "count": 7,
+  "entries": [
+    {
+      "id": "agent-orchestration",
+      "type": "agent",
+      "name": "Agent Orchestration",
+      "description": "Subagents for coordinating multi-agent workflows: task decomposition, delegation, and synthesis.",
+      "source": {
+        "repo": "wshobson/agents",
+        "path": "plugins/agent-orchestration/agents"
+      },
+      "author": "wshobson",
+      "tags": [
+        "orchestration",
+        "multi-agent",
+        "workflows"
+      ]
+    },
+    {
+      "id": "fetch",
+      "type": "mcp",
+      "name": "Fetch",
+      "description": "Reference MCP server that fetches web pages and converts them to markdown for LLM consumption.",
+      "source": {
+        "repo": "modelcontextprotocol/servers",
+        "path": "src/fetch"
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "uvx",
+        "args": [
+          "mcp-server-fetch"
+        ]
+      },
+      "author": "Model Context Protocol",
+      "tags": [
+        "web",
+        "http",
+        "markdown"
+      ]
+    },
+    {
+      "id": "filesystem",
+      "type": "mcp",
+      "name": "Filesystem",
+      "description": "Reference MCP server for secure, configurable file operations within allowed directories.",
+      "source": {
+        "repo": "modelcontextprotocol/servers",
+        "path": "src/filesystem"
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "@modelcontextprotocol/server-filesystem",
+          "."
+        ]
+      },
+      "author": "Model Context Protocol",
+      "tags": [
+        "files",
+        "local"
+      ]
+    },
+    {
+      "id": "github",
+      "type": "mcp",
+      "name": "GitHub",
+      "description": "GitHub's official remote MCP server: repos, issues, pull requests, and code search.",
+      "source": {
+        "repo": "github/github-mcp-server",
+        "path": "."
+      },
+      "mcp": {
+        "type": "http",
+        "url": "https://api.githubcopilot.com/mcp/"
+      },
+      "author": "GitHub",
+      "tags": [
+        "git",
+        "issues",
+        "pull-requests"
+      ]
+    },
+    {
+      "id": "mcp-builder",
+      "type": "skill",
+      "name": "MCP Builder",
+      "description": "Helps build MCP servers: protocol concepts, SDK usage, tool design, and testing guidance.",
+      "source": {
+        "repo": "anthropics/skills",
+        "path": "skills/mcp-builder"
+      },
+      "author": "Anthropic",
+      "tags": [
+        "mcp",
+        "authoring",
+        "development"
+      ]
+    },
+    {
+      "id": "pdf",
+      "type": "skill",
+      "name": "PDF Toolkit",
+      "description": "Extract text and tables from PDFs, create new PDFs, fill forms, and merge or split documents.",
+      "source": {
+        "repo": "anthropics/skills",
+        "path": "skills/pdf"
+      },
+      "author": "Anthropic",
+      "tags": [
+        "documents",
+        "pdf",
+        "forms"
+      ]
+    },
+    {
+      "id": "skill-creator",
+      "type": "skill",
+      "name": "Skill Creator",
+      "description": "Guides Claude through authoring new skills: structure, frontmatter, progressive disclosure, and packaging.",
+      "source": {
+        "repo": "anthropics/skills",
+        "path": "skills/skill-creator"
+      },
+      "author": "Anthropic",
+      "tags": [
+        "meta",
+        "authoring",
+        "skills"
+      ]
+    }
+  ]
+}

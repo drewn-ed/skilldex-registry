@@ -1,0 +1,9 @@
+{
+  "id": "agent-orchestration",
+  "type": "agent",
+  "name": "Agent Orchestration",
+  "description": "Subagents for coordinating multi-agent workflows: task decomposition, delegation, and synthesis.",
+  "source": { "repo": "wshobson/agents", "path": "plugins/agent-orchestration/agents" },
+  "author": "wshobson",
+  "tags": ["orchestration", "multi-agent", "workflows"]
+}

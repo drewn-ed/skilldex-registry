@@ -1,0 +1,9 @@
+{
+  "id": "pdf",
+  "type": "skill",
+  "name": "PDF Toolkit",
+  "description": "Extract text and tables from PDFs, create new PDFs, fill forms, and merge or split documents.",
+  "source": { "repo": "anthropics/skills", "path": "skills/pdf" },
+  "author": "Anthropic",
+  "tags": ["documents", "pdf", "forms"]
+}
