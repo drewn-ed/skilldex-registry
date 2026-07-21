@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "count": 7,
+  "count": 19,
   "entries": [
     {
       "id": "agent-orchestration",
@@ -16,6 +16,47 @@
         "orchestration",
         "multi-agent",
         "workflows"
+      ]
+    },
+    {
+      "id": "backend-development",
+      "type": "agent",
+      "name": "Backend Development",
+      "description": "Subagents for backend work: architecture, GraphQL, event sourcing, and performance engineering.",
+      "source": {
+        "repo": "wshobson/agents",
+        "path": "plugins/backend-development/agents"
+      },
+      "author": "wshobson",
+      "tags": [
+        "backend",
+        "architecture",
+        "graphql",
+        "performance"
+      ]
+    },
+    {
+      "id": "context7",
+      "type": "mcp",
+      "name": "Context7",
+      "description": "Up-to-date, version-specific documentation and code examples for any library, injected straight into context.",
+      "source": {
+        "repo": "upstash/context7",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "@upstash/context7-mcp"
+        ]
+      },
+      "author": "Upstash",
+      "tags": [
+        "documentation",
+        "libraries",
+        "code-examples"
       ]
     },
     {
@@ -66,6 +107,28 @@
       ]
     },
     {
+      "id": "git",
+      "type": "mcp",
+      "name": "Git",
+      "description": "Reference MCP server for reading, searching, and manipulating local Git repositories.",
+      "source": {
+        "repo": "modelcontextprotocol/servers",
+        "path": "src/git"
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "uvx",
+        "args": [
+          "mcp-server-git"
+        ]
+      },
+      "author": "Model Context Protocol",
+      "tags": [
+        "git",
+        "version-control"
+      ]
+    },
+    {
       "id": "github",
       "type": "mcp",
       "name": "GitHub",
@@ -83,6 +146,133 @@
         "git",
         "issues",
         "pull-requests"
+      ]
+    },
+    {
+      "id": "memory",
+      "type": "mcp",
+      "name": "Memory",
+      "description": "Reference MCP server providing a knowledge-graph-based persistent memory across sessions.",
+      "source": {
+        "repo": "modelcontextprotocol/servers",
+        "path": "src/memory"
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "@modelcontextprotocol/server-memory"
+        ]
+      },
+      "author": "Model Context Protocol",
+      "tags": [
+        "memory",
+        "knowledge-graph",
+        "persistence"
+      ]
+    },
+    {
+      "id": "playwright",
+      "type": "mcp",
+      "name": "Playwright",
+      "description": "Microsoft's official MCP server for browser automation: navigate, click, fill forms, and capture accessibility snapshots.",
+      "source": {
+        "repo": "microsoft/playwright-mcp",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "@playwright/mcp@latest"
+        ]
+      },
+      "author": "Microsoft",
+      "tags": [
+        "browser",
+        "automation",
+        "testing",
+        "web"
+      ]
+    },
+    {
+      "id": "sequential-thinking",
+      "type": "mcp",
+      "name": "Sequential Thinking",
+      "description": "Reference MCP server for structured, revisable step-by-step reasoning chains.",
+      "source": {
+        "repo": "modelcontextprotocol/servers",
+        "path": "src/sequentialthinking"
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "@modelcontextprotocol/server-sequential-thinking"
+        ]
+      },
+      "author": "Model Context Protocol",
+      "tags": [
+        "reasoning",
+        "planning"
+      ]
+    },
+    {
+      "id": "time",
+      "type": "mcp",
+      "name": "Time",
+      "description": "Reference MCP server for time and timezone conversions.",
+      "source": {
+        "repo": "modelcontextprotocol/servers",
+        "path": "src/time"
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "uvx",
+        "args": [
+          "mcp-server-time"
+        ]
+      },
+      "author": "Model Context Protocol",
+      "tags": [
+        "time",
+        "timezones"
+      ]
+    },
+    {
+      "id": "docx",
+      "type": "skill",
+      "name": "Word Documents",
+      "description": "Create and edit Microsoft Word .docx files: formatting, styles, tracked changes, and templates.",
+      "source": {
+        "repo": "anthropics/skills",
+        "path": "skills/docx"
+      },
+      "author": "Anthropic",
+      "tags": [
+        "documents",
+        "word",
+        "office"
+      ]
+    },
+    {
+      "id": "frontend-design",
+      "type": "skill",
+      "name": "Frontend Design",
+      "description": "Guides Claude toward distinctive, production-quality frontend interfaces instead of generic AI-styled pages.",
+      "source": {
+        "repo": "anthropics/skills",
+        "path": "skills/frontend-design"
+      },
+      "author": "Anthropic",
+      "tags": [
+        "frontend",
+        "design",
+        "css",
+        "ui"
       ]
     },
     {
@@ -118,6 +308,22 @@
       ]
     },
     {
+      "id": "pptx",
+      "type": "skill",
+      "name": "PowerPoint Presentations",
+      "description": "Create and edit PowerPoint .pptx presentations: slides, layouts, themes, and speaker notes.",
+      "source": {
+        "repo": "anthropics/skills",
+        "path": "skills/pptx"
+      },
+      "author": "Anthropic",
+      "tags": [
+        "presentations",
+        "powerpoint",
+        "office"
+      ]
+    },
+    {
       "id": "skill-creator",
       "type": "skill",
       "name": "Skill Creator",
@@ -131,6 +337,39 @@
         "meta",
         "authoring",
         "skills"
+      ]
+    },
+    {
+      "id": "webapp-testing",
+      "type": "skill",
+      "name": "Webapp Testing",
+      "description": "Test local web applications with Playwright: navigate, interact, screenshot, and verify behavior.",
+      "source": {
+        "repo": "anthropics/skills",
+        "path": "skills/webapp-testing"
+      },
+      "author": "Anthropic",
+      "tags": [
+        "testing",
+        "playwright",
+        "web"
+      ]
+    },
+    {
+      "id": "xlsx",
+      "type": "skill",
+      "name": "Excel Spreadsheets",
+      "description": "Create and edit Excel .xlsx spreadsheets: formulas, charts, pivot tables, and data analysis.",
+      "source": {
+        "repo": "anthropics/skills",
+        "path": "skills/xlsx"
+      },
+      "author": "Anthropic",
+      "tags": [
+        "spreadsheets",
+        "excel",
+        "office",
+        "data"
       ]
     }
   ]

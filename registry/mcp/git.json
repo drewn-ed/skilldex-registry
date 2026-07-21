@@ -1,0 +1,22 @@
+{
+  "id": "git",
+  "type": "mcp",
+  "name": "Git",
+  "description": "Reference MCP server for reading, searching, and manipulating local Git repositories.",
+  "source": {
+    "repo": "modelcontextprotocol/servers",
+    "path": "src/git"
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "uvx",
+    "args": [
+      "mcp-server-git"
+    ]
+  },
+  "author": "Model Context Protocol",
+  "tags": [
+    "git",
+    "version-control"
+  ]
+}

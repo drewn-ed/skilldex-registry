@@ -1,0 +1,23 @@
+{
+  "id": "sequential-thinking",
+  "type": "mcp",
+  "name": "Sequential Thinking",
+  "description": "Reference MCP server for structured, revisable step-by-step reasoning chains.",
+  "source": {
+    "repo": "modelcontextprotocol/servers",
+    "path": "src/sequentialthinking"
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@modelcontextprotocol/server-sequential-thinking"
+    ]
+  },
+  "author": "Model Context Protocol",
+  "tags": [
+    "reasoning",
+    "planning"
+  ]
+}

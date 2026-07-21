@@ -1,0 +1,17 @@
+{
+  "id": "xlsx",
+  "type": "skill",
+  "name": "Excel Spreadsheets",
+  "description": "Create and edit Excel .xlsx spreadsheets: formulas, charts, pivot tables, and data analysis.",
+  "source": {
+    "repo": "anthropics/skills",
+    "path": "skills/xlsx"
+  },
+  "author": "Anthropic",
+  "tags": [
+    "spreadsheets",
+    "excel",
+    "office",
+    "data"
+  ]
+}

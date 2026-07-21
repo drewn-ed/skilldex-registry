@@ -1,0 +1,17 @@
+{
+  "id": "frontend-design",
+  "type": "skill",
+  "name": "Frontend Design",
+  "description": "Guides Claude toward distinctive, production-quality frontend interfaces instead of generic AI-styled pages.",
+  "source": {
+    "repo": "anthropics/skills",
+    "path": "skills/frontend-design"
+  },
+  "author": "Anthropic",
+  "tags": [
+    "frontend",
+    "design",
+    "css",
+    "ui"
+  ]
+}

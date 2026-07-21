@@ -1,0 +1,24 @@
+{
+  "id": "context7",
+  "type": "mcp",
+  "name": "Context7",
+  "description": "Up-to-date, version-specific documentation and code examples for any library, injected straight into context.",
+  "source": {
+    "repo": "upstash/context7",
+    "path": "."
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@upstash/context7-mcp"
+    ]
+  },
+  "author": "Upstash",
+  "tags": [
+    "documentation",
+    "libraries",
+    "code-examples"
+  ]
+}

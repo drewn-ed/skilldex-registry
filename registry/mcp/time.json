@@ -1,0 +1,22 @@
+{
+  "id": "time",
+  "type": "mcp",
+  "name": "Time",
+  "description": "Reference MCP server for time and timezone conversions.",
+  "source": {
+    "repo": "modelcontextprotocol/servers",
+    "path": "src/time"
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "uvx",
+    "args": [
+      "mcp-server-time"
+    ]
+  },
+  "author": "Model Context Protocol",
+  "tags": [
+    "time",
+    "timezones"
+  ]
+}

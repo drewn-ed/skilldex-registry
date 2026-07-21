@@ -1,0 +1,24 @@
+{
+  "id": "memory",
+  "type": "mcp",
+  "name": "Memory",
+  "description": "Reference MCP server providing a knowledge-graph-based persistent memory across sessions.",
+  "source": {
+    "repo": "modelcontextprotocol/servers",
+    "path": "src/memory"
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@modelcontextprotocol/server-memory"
+    ]
+  },
+  "author": "Model Context Protocol",
+  "tags": [
+    "memory",
+    "knowledge-graph",
+    "persistence"
+  ]
+}

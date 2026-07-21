@@ -1,0 +1,25 @@
+{
+  "id": "playwright",
+  "type": "mcp",
+  "name": "Playwright",
+  "description": "Microsoft's official MCP server for browser automation: navigate, click, fill forms, and capture accessibility snapshots.",
+  "source": {
+    "repo": "microsoft/playwright-mcp",
+    "path": "."
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@playwright/mcp@latest"
+    ]
+  },
+  "author": "Microsoft",
+  "tags": [
+    "browser",
+    "automation",
+    "testing",
+    "web"
+  ]
+}

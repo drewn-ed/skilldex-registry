@@ -1,0 +1,16 @@
+{
+  "id": "webapp-testing",
+  "type": "skill",
+  "name": "Webapp Testing",
+  "description": "Test local web applications with Playwright: navigate, interact, screenshot, and verify behavior.",
+  "source": {
+    "repo": "anthropics/skills",
+    "path": "skills/webapp-testing"
+  },
+  "author": "Anthropic",
+  "tags": [
+    "testing",
+    "playwright",
+    "web"
+  ]
+}

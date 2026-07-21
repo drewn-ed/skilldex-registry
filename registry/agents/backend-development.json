@@ -1,0 +1,17 @@
+{
+  "id": "backend-development",
+  "type": "agent",
+  "name": "Backend Development",
+  "description": "Subagents for backend work: architecture, GraphQL, event sourcing, and performance engineering.",
+  "source": {
+    "repo": "wshobson/agents",
+    "path": "plugins/backend-development/agents"
+  },
+  "author": "wshobson",
+  "tags": [
+    "backend",
+    "architecture",
+    "graphql",
+    "performance"
+  ]
+}

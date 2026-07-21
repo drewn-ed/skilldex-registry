@@ -1,0 +1,16 @@
+{
+  "id": "docx",
+  "type": "skill",
+  "name": "Word Documents",
+  "description": "Create and edit Microsoft Word .docx files: formatting, styles, tracked changes, and templates.",
+  "source": {
+    "repo": "anthropics/skills",
+    "path": "skills/docx"
+  },
+  "author": "Anthropic",
+  "tags": [
+    "documents",
+    "word",
+    "office"
+  ]
+}
