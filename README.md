@@ -1,5 +1,7 @@
 # skilldex-registry
 
+[![Validate](https://github.com/drewn-ed/skilldex-registry/actions/workflows/validate.yml/badge.svg)](https://github.com/drewn-ed/skilldex-registry/actions/workflows/validate.yml)
+
 **A community registry of Claude Code skills, subagents, and MCP servers.**
 
 **Browse it: [drewn-ed.github.io/skilldex-registry](https://drewn-ed.github.io/skilldex-registry/)**
