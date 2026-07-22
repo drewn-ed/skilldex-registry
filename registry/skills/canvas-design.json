@@ -1,0 +1,16 @@
+{
+  "id": "canvas-design",
+  "type": "skill",
+  "name": "Canvas Design",
+  "description": "Design visual layouts, posters, and graphics on an HTML canvas.",
+  "source": {
+    "repo": "anthropics/skills",
+    "path": "skills/canvas-design"
+  },
+  "author": "Anthropic",
+  "tags": [
+    "design",
+    "graphics",
+    "visual"
+  ]
+}

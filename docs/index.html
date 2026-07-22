@@ -78,12 +78,16 @@
     background: var(--surface); color: var(--text);
     outline: none;
   }
-  #search:focus { border-color: var(--accent); }
+  #search { transition: border-color .2s ease, box-shadow .2s ease; }
+  #search:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
   .pill {
     padding: 9px 16px; border-radius: 999px; cursor: pointer;
     border: 1px solid var(--border); background: var(--surface);
     color: var(--muted); font-size: .9rem; font-weight: 500;
+    transition: background .18s ease, color .18s ease, border-color .18s ease, transform .1s ease;
   }
+  .pill:hover { border-color: var(--accent); color: var(--accent); }
+  .pill:active { transform: scale(.95); }
   .pill.active { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
   #count { color: var(--muted); font-size: .85rem; margin: 0 0 14px; }
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 14px; }
@@ -91,6 +95,27 @@
     background: var(--surface); border: 1px solid var(--border);
     border-radius: 14px; padding: 18px; box-shadow: var(--shadow);
     display: flex; flex-direction: column; gap: 10px;
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,.10);
+    border-color: var(--accent);
+  }
+  @keyframes card-in {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .card.enter {
+    animation: card-in .45s cubic-bezier(.2,.7,.3,1) backwards;
+    animation-delay: calc(var(--i) * 35ms);
+  }
+  @keyframes pop {
+    0% { transform: scale(1); } 50% { transform: scale(1.25); } 100% { transform: scale(1); }
+  }
+  button.copy.done { animation: pop .3s ease; }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
   }
   .card-top { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
   .card h3 { margin: 0; font-size: 1.02rem; }
@@ -200,10 +225,12 @@ function matches(entry, query) {
   return query.split(/\s+/).filter(Boolean).every((tok) => hay.includes(tok));
 }
 
-function card(e) {
+let firstRender = true;
+function card(e, i) {
   const repo = e.source && e.source.repo;
   const cmd = `uvx skilldex install ${e.id}`;
-  return `<div class="card">
+  const enter = firstRender ? ` enter" style="--i:${Math.min(i, 12)}` : "";
+  return `<div class="card${enter}">
     <div class="card-top">
       <h3>${esc(e.name)}</h3>
       <span class="badge ${e.type}">${TYPE_LABEL[e.type] || e.type}</span>
@@ -230,7 +257,8 @@ function render() {
   const query = cleanQuery($("#search").value);
   const shown = entries.filter((e) =>
     (!activeType || e.type === activeType) && (!query || matches(e, query)));
-  $("#grid").innerHTML = shown.map(card).join("");
+  $("#grid").innerHTML = shown.map((e, i) => card(e, i)).join("");
+  firstRender = false;
   $("#empty").hidden = shown.length > 0;
   $("#count").textContent = `${shown.length} of ${entries.length} entries`;
 }

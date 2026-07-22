@@ -1,0 +1,16 @@
+{
+  "id": "accessibility-compliance",
+  "type": "agent",
+  "name": "Accessibility Compliance",
+  "description": "Subagents for WCAG auditing and building accessible interfaces.",
+  "source": {
+    "repo": "wshobson/agents",
+    "path": "plugins/accessibility-compliance/agents"
+  },
+  "author": "wshobson",
+  "tags": [
+    "accessibility",
+    "wcag",
+    "frontend"
+  ]
+}

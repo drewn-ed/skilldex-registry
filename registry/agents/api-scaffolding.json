@@ -1,0 +1,17 @@
+{
+  "id": "api-scaffolding",
+  "type": "agent",
+  "name": "API Scaffolding",
+  "description": "Subagents for designing and scaffolding REST and GraphQL APIs.",
+  "source": {
+    "repo": "wshobson/agents",
+    "path": "plugins/api-scaffolding/agents"
+  },
+  "author": "wshobson",
+  "tags": [
+    "api",
+    "rest",
+    "graphql",
+    "scaffolding"
+  ]
+}

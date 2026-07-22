@@ -1,0 +1,27 @@
+{
+  "id": "supabase",
+  "type": "mcp",
+  "name": "Supabase",
+  "description": "Supabase's official MCP server: query databases, manage tables, and call the Management API.",
+  "source": {
+    "repo": "supabase/mcp",
+    "path": "."
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@supabase/mcp-server-supabase@latest"
+    ],
+    "env": {
+      "SUPABASE_ACCESS_TOKEN": "${SUPABASE_ACCESS_TOKEN}"
+    }
+  },
+  "author": "Supabase",
+  "tags": [
+    "database",
+    "postgres",
+    "backend"
+  ]
+}

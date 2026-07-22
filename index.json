@@ -1,7 +1,23 @@
 {
   "version": 1,
-  "count": 19,
+  "count": 38,
   "entries": [
+    {
+      "id": "accessibility-compliance",
+      "type": "agent",
+      "name": "Accessibility Compliance",
+      "description": "Subagents for WCAG auditing and building accessible interfaces.",
+      "source": {
+        "repo": "wshobson/agents",
+        "path": "plugins/accessibility-compliance/agents"
+      },
+      "author": "wshobson",
+      "tags": [
+        "accessibility",
+        "wcag",
+        "frontend"
+      ]
+    },
     {
       "id": "agent-orchestration",
       "type": "agent",
@@ -19,6 +35,39 @@
       ]
     },
     {
+      "id": "api-scaffolding",
+      "type": "agent",
+      "name": "API Scaffolding",
+      "description": "Subagents for designing and scaffolding REST and GraphQL APIs.",
+      "source": {
+        "repo": "wshobson/agents",
+        "path": "plugins/api-scaffolding/agents"
+      },
+      "author": "wshobson",
+      "tags": [
+        "api",
+        "rest",
+        "graphql",
+        "scaffolding"
+      ]
+    },
+    {
+      "id": "application-performance",
+      "type": "agent",
+      "name": "Application Performance",
+      "description": "Subagents for profiling, load testing, and performance optimization.",
+      "source": {
+        "repo": "wshobson/agents",
+        "path": "plugins/application-performance/agents"
+      },
+      "author": "wshobson",
+      "tags": [
+        "performance",
+        "profiling",
+        "optimization"
+      ]
+    },
+    {
       "id": "backend-development",
       "type": "agent",
       "name": "Backend Development",
@@ -32,6 +81,31 @@
         "backend",
         "architecture",
         "graphql",
+        "performance"
+      ]
+    },
+    {
+      "id": "chrome-devtools",
+      "type": "mcp",
+      "name": "Chrome DevTools",
+      "description": "Google's official MCP server for Chrome DevTools: inspect pages, debug, profile performance, and automate the browser.",
+      "source": {
+        "repo": "ChromeDevTools/chrome-devtools-mcp",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "chrome-devtools-mcp@latest"
+        ]
+      },
+      "author": "Google",
+      "tags": [
+        "browser",
+        "debugging",
+        "devtools",
         "performance"
       ]
     },
@@ -107,6 +181,34 @@
       ]
     },
     {
+      "id": "firecrawl",
+      "type": "mcp",
+      "name": "Firecrawl",
+      "description": "Web scraping and crawling MCP server: extract clean content from any site, with search and batch crawls.",
+      "source": {
+        "repo": "firecrawl/firecrawl-mcp-server",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "firecrawl-mcp"
+        ],
+        "env": {
+          "FIRECRAWL_API_KEY": "${FIRECRAWL_API_KEY}"
+        }
+      },
+      "author": "Firecrawl",
+      "tags": [
+        "scraping",
+        "crawling",
+        "web",
+        "data"
+      ]
+    },
+    {
       "id": "git",
       "type": "mcp",
       "name": "Git",
@@ -173,6 +275,34 @@
       ]
     },
     {
+      "id": "notion",
+      "type": "mcp",
+      "name": "Notion",
+      "description": "Notion's official MCP server: search, read, and write pages and databases.",
+      "source": {
+        "repo": "makenotion/notion-mcp-server",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "@notionhq/notion-mcp-server"
+        ],
+        "env": {
+          "NOTION_TOKEN": "${NOTION_TOKEN}"
+        }
+      },
+      "author": "Notion",
+      "tags": [
+        "notion",
+        "notes",
+        "databases",
+        "productivity"
+      ]
+    },
+    {
       "id": "playwright",
       "type": "mcp",
       "name": "Playwright",
@@ -195,6 +325,26 @@
         "automation",
         "testing",
         "web"
+      ]
+    },
+    {
+      "id": "sentry",
+      "type": "mcp",
+      "name": "Sentry",
+      "description": "Sentry's official remote MCP server: query issues, errors, and performance data.",
+      "source": {
+        "repo": "getsentry/sentry-mcp",
+        "path": "."
+      },
+      "mcp": {
+        "type": "http",
+        "url": "https://mcp.sentry.dev/mcp"
+      },
+      "author": "Sentry",
+      "tags": [
+        "errors",
+        "monitoring",
+        "observability"
       ]
     },
     {
@@ -221,6 +371,88 @@
       ]
     },
     {
+      "id": "serena",
+      "type": "mcp",
+      "name": "Serena",
+      "description": "Coding-agent toolkit MCP server: semantic code retrieval and editing via language servers.",
+      "source": {
+        "repo": "oraios/serena",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "uvx",
+        "args": [
+          "--from",
+          "git+https://github.com/oraios/serena",
+          "serena",
+          "start-mcp-server"
+        ]
+      },
+      "author": "Oraios AI",
+      "tags": [
+        "coding",
+        "lsp",
+        "semantic-search",
+        "refactoring"
+      ]
+    },
+    {
+      "id": "stripe",
+      "type": "mcp",
+      "name": "Stripe",
+      "description": "Stripe's official agent toolkit MCP server: customers, products, invoices, and payment data.",
+      "source": {
+        "repo": "stripe/ai",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "@stripe/mcp",
+          "--tools=all"
+        ],
+        "env": {
+          "STRIPE_SECRET_KEY": "${STRIPE_SECRET_KEY}"
+        }
+      },
+      "author": "Stripe",
+      "tags": [
+        "payments",
+        "billing",
+        "finance"
+      ]
+    },
+    {
+      "id": "supabase",
+      "type": "mcp",
+      "name": "Supabase",
+      "description": "Supabase's official MCP server: query databases, manage tables, and call the Management API.",
+      "source": {
+        "repo": "supabase/mcp",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "@supabase/mcp-server-supabase@latest"
+        ],
+        "env": {
+          "SUPABASE_ACCESS_TOKEN": "${SUPABASE_ACCESS_TOKEN}"
+        }
+      },
+      "author": "Supabase",
+      "tags": [
+        "database",
+        "postgres",
+        "backend"
+      ]
+    },
+    {
       "id": "time",
       "type": "mcp",
       "name": "Time",
@@ -240,6 +472,85 @@
       "tags": [
         "time",
         "timezones"
+      ]
+    },
+    {
+      "id": "algorithmic-art",
+      "type": "skill",
+      "name": "Algorithmic Art",
+      "description": "Create generative and algorithmic art: patterns, fractals, and procedural visuals.",
+      "source": {
+        "repo": "anthropics/skills",
+        "path": "skills/algorithmic-art"
+      },
+      "author": "Anthropic",
+      "tags": [
+        "art",
+        "creative",
+        "generative"
+      ]
+    },
+    {
+      "id": "brand-guidelines",
+      "type": "skill",
+      "name": "Brand Guidelines",
+      "description": "Apply consistent brand identity \u2014 colors, typography, tone \u2014 across generated content.",
+      "source": {
+        "repo": "anthropics/skills",
+        "path": "skills/brand-guidelines"
+      },
+      "author": "Anthropic",
+      "tags": [
+        "branding",
+        "design"
+      ]
+    },
+    {
+      "id": "canvas-design",
+      "type": "skill",
+      "name": "Canvas Design",
+      "description": "Design visual layouts, posters, and graphics on an HTML canvas.",
+      "source": {
+        "repo": "anthropics/skills",
+        "path": "skills/canvas-design"
+      },
+      "author": "Anthropic",
+      "tags": [
+        "design",
+        "graphics",
+        "visual"
+      ]
+    },
+    {
+      "id": "claude-api",
+      "type": "skill",
+      "name": "Claude API",
+      "description": "Reference for building with the Claude API: models, pricing, streaming, tool use, and caching.",
+      "source": {
+        "repo": "anthropics/skills",
+        "path": "skills/claude-api"
+      },
+      "author": "Anthropic",
+      "tags": [
+        "api",
+        "anthropic",
+        "development"
+      ]
+    },
+    {
+      "id": "doc-coauthoring",
+      "type": "skill",
+      "name": "Doc Co-authoring",
+      "description": "Structured collaborative document writing: outlines, drafts, and revision workflows.",
+      "source": {
+        "repo": "anthropics/skills",
+        "path": "skills/doc-coauthoring"
+      },
+      "author": "Anthropic",
+      "tags": [
+        "writing",
+        "documents",
+        "collaboration"
       ]
     },
     {
@@ -273,6 +584,22 @@
         "design",
         "css",
         "ui"
+      ]
+    },
+    {
+      "id": "internal-comms",
+      "type": "skill",
+      "name": "Internal Comms",
+      "description": "Write clear internal communications: announcements, updates, and team messages.",
+      "source": {
+        "repo": "anthropics/skills",
+        "path": "skills/internal-comms"
+      },
+      "author": "Anthropic",
+      "tags": [
+        "writing",
+        "communication",
+        "business"
       ]
     },
     {
@@ -337,6 +664,54 @@
         "meta",
         "authoring",
         "skills"
+      ]
+    },
+    {
+      "id": "slack-gif-creator",
+      "type": "skill",
+      "name": "Slack GIF Creator",
+      "description": "Create animated GIFs sized and optimized for Slack.",
+      "source": {
+        "repo": "anthropics/skills",
+        "path": "skills/slack-gif-creator"
+      },
+      "author": "Anthropic",
+      "tags": [
+        "gif",
+        "slack",
+        "creative"
+      ]
+    },
+    {
+      "id": "theme-factory",
+      "type": "skill",
+      "name": "Theme Factory",
+      "description": "Generate cohesive visual themes: palettes, typography pairings, and style tokens.",
+      "source": {
+        "repo": "anthropics/skills",
+        "path": "skills/theme-factory"
+      },
+      "author": "Anthropic",
+      "tags": [
+        "design",
+        "themes",
+        "css"
+      ]
+    },
+    {
+      "id": "web-artifacts-builder",
+      "type": "skill",
+      "name": "Web Artifacts Builder",
+      "description": "Build polished single-page web artifacts with solid layout, styling, and interactivity.",
+      "source": {
+        "repo": "anthropics/skills",
+        "path": "skills/web-artifacts-builder"
+      },
+      "author": "Anthropic",
+      "tags": [
+        "web",
+        "html",
+        "artifacts"
       ]
     },
     {

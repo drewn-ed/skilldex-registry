@@ -1,0 +1,28 @@
+{
+  "id": "stripe",
+  "type": "mcp",
+  "name": "Stripe",
+  "description": "Stripe's official agent toolkit MCP server: customers, products, invoices, and payment data.",
+  "source": {
+    "repo": "stripe/ai",
+    "path": "."
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@stripe/mcp",
+      "--tools=all"
+    ],
+    "env": {
+      "STRIPE_SECRET_KEY": "${STRIPE_SECRET_KEY}"
+    }
+  },
+  "author": "Stripe",
+  "tags": [
+    "payments",
+    "billing",
+    "finance"
+  ]
+}

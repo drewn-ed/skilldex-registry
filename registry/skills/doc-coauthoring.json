@@ -1,0 +1,16 @@
+{
+  "id": "doc-coauthoring",
+  "type": "skill",
+  "name": "Doc Co-authoring",
+  "description": "Structured collaborative document writing: outlines, drafts, and revision workflows.",
+  "source": {
+    "repo": "anthropics/skills",
+    "path": "skills/doc-coauthoring"
+  },
+  "author": "Anthropic",
+  "tags": [
+    "writing",
+    "documents",
+    "collaboration"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "id": "sentry",
+  "type": "mcp",
+  "name": "Sentry",
+  "description": "Sentry's official remote MCP server: query issues, errors, and performance data.",
+  "source": {
+    "repo": "getsentry/sentry-mcp",
+    "path": "."
+  },
+  "mcp": {
+    "type": "http",
+    "url": "https://mcp.sentry.dev/mcp"
+  },
+  "author": "Sentry",
+  "tags": [
+    "errors",
+    "monitoring",
+    "observability"
+  ]
+}

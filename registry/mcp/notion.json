@@ -1,0 +1,28 @@
+{
+  "id": "notion",
+  "type": "mcp",
+  "name": "Notion",
+  "description": "Notion's official MCP server: search, read, and write pages and databases.",
+  "source": {
+    "repo": "makenotion/notion-mcp-server",
+    "path": "."
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@notionhq/notion-mcp-server"
+    ],
+    "env": {
+      "NOTION_TOKEN": "${NOTION_TOKEN}"
+    }
+  },
+  "author": "Notion",
+  "tags": [
+    "notion",
+    "notes",
+    "databases",
+    "productivity"
+  ]
+}

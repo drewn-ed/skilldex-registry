@@ -1,0 +1,16 @@
+{
+  "id": "application-performance",
+  "type": "agent",
+  "name": "Application Performance",
+  "description": "Subagents for profiling, load testing, and performance optimization.",
+  "source": {
+    "repo": "wshobson/agents",
+    "path": "plugins/application-performance/agents"
+  },
+  "author": "wshobson",
+  "tags": [
+    "performance",
+    "profiling",
+    "optimization"
+  ]
+}

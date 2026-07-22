@@ -1,0 +1,16 @@
+{
+  "id": "algorithmic-art",
+  "type": "skill",
+  "name": "Algorithmic Art",
+  "description": "Create generative and algorithmic art: patterns, fractals, and procedural visuals.",
+  "source": {
+    "repo": "anthropics/skills",
+    "path": "skills/algorithmic-art"
+  },
+  "author": "Anthropic",
+  "tags": [
+    "art",
+    "creative",
+    "generative"
+  ]
+}

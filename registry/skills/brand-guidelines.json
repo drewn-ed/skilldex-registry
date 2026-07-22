@@ -1,0 +1,15 @@
+{
+  "id": "brand-guidelines",
+  "type": "skill",
+  "name": "Brand Guidelines",
+  "description": "Apply consistent brand identity \u2014 colors, typography, tone \u2014 across generated content.",
+  "source": {
+    "repo": "anthropics/skills",
+    "path": "skills/brand-guidelines"
+  },
+  "author": "Anthropic",
+  "tags": [
+    "branding",
+    "design"
+  ]
+}

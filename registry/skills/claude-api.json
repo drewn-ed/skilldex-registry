@@ -1,0 +1,16 @@
+{
+  "id": "claude-api",
+  "type": "skill",
+  "name": "Claude API",
+  "description": "Reference for building with the Claude API: models, pricing, streaming, tool use, and caching.",
+  "source": {
+    "repo": "anthropics/skills",
+    "path": "skills/claude-api"
+  },
+  "author": "Anthropic",
+  "tags": [
+    "api",
+    "anthropic",
+    "development"
+  ]
+}

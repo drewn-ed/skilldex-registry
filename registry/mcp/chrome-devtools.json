@@ -1,0 +1,25 @@
+{
+  "id": "chrome-devtools",
+  "type": "mcp",
+  "name": "Chrome DevTools",
+  "description": "Google's official MCP server for Chrome DevTools: inspect pages, debug, profile performance, and automate the browser.",
+  "source": {
+    "repo": "ChromeDevTools/chrome-devtools-mcp",
+    "path": "."
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "chrome-devtools-mcp@latest"
+    ]
+  },
+  "author": "Google",
+  "tags": [
+    "browser",
+    "debugging",
+    "devtools",
+    "performance"
+  ]
+}

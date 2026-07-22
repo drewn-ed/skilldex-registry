@@ -1,0 +1,16 @@
+{
+  "id": "web-artifacts-builder",
+  "type": "skill",
+  "name": "Web Artifacts Builder",
+  "description": "Build polished single-page web artifacts with solid layout, styling, and interactivity.",
+  "source": {
+    "repo": "anthropics/skills",
+    "path": "skills/web-artifacts-builder"
+  },
+  "author": "Anthropic",
+  "tags": [
+    "web",
+    "html",
+    "artifacts"
+  ]
+}

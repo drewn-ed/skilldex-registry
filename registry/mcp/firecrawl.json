@@ -1,0 +1,28 @@
+{
+  "id": "firecrawl",
+  "type": "mcp",
+  "name": "Firecrawl",
+  "description": "Web scraping and crawling MCP server: extract clean content from any site, with search and batch crawls.",
+  "source": {
+    "repo": "firecrawl/firecrawl-mcp-server",
+    "path": "."
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "firecrawl-mcp"
+    ],
+    "env": {
+      "FIRECRAWL_API_KEY": "${FIRECRAWL_API_KEY}"
+    }
+  },
+  "author": "Firecrawl",
+  "tags": [
+    "scraping",
+    "crawling",
+    "web",
+    "data"
+  ]
+}

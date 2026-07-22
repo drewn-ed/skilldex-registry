@@ -1,0 +1,27 @@
+{
+  "id": "serena",
+  "type": "mcp",
+  "name": "Serena",
+  "description": "Coding-agent toolkit MCP server: semantic code retrieval and editing via language servers.",
+  "source": {
+    "repo": "oraios/serena",
+    "path": "."
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "uvx",
+    "args": [
+      "--from",
+      "git+https://github.com/oraios/serena",
+      "serena",
+      "start-mcp-server"
+    ]
+  },
+  "author": "Oraios AI",
+  "tags": [
+    "coding",
+    "lsp",
+    "semantic-search",
+    "refactoring"
+  ]
+}

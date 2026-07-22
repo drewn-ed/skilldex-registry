@@ -1,0 +1,16 @@
+{
+  "id": "internal-comms",
+  "type": "skill",
+  "name": "Internal Comms",
+  "description": "Write clear internal communications: announcements, updates, and team messages.",
+  "source": {
+    "repo": "anthropics/skills",
+    "path": "skills/internal-comms"
+  },
+  "author": "Anthropic",
+  "tags": [
+    "writing",
+    "communication",
+    "business"
+  ]
+}

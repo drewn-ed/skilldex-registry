@@ -1,0 +1,16 @@
+{
+  "id": "slack-gif-creator",
+  "type": "skill",
+  "name": "Slack GIF Creator",
+  "description": "Create animated GIFs sized and optimized for Slack.",
+  "source": {
+    "repo": "anthropics/skills",
+    "path": "skills/slack-gif-creator"
+  },
+  "author": "Anthropic",
+  "tags": [
+    "gif",
+    "slack",
+    "creative"
+  ]
+}
