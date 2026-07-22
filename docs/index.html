@@ -96,13 +96,26 @@
   .pill:hover { border-color: var(--accent); color: var(--accent); }
   .pill:active { transform: scale(.95); }
   .pill.active { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
-  #sort {
-    padding: 9px 12px; border-radius: 999px; cursor: pointer;
-    border: 1px solid var(--border); background: var(--surface);
-    color: var(--muted); font-size: .9rem; font-weight: 500; outline: none;
-    transition: border-color .18s ease, color .18s ease;
+  .dropdown { position: relative; }
+  .dd-caret { font-size: .7em; display: inline-block; transition: transform .18s ease; }
+  .dropdown.open .dd-caret { transform: rotate(180deg); }
+  .dd-menu {
+    position: absolute; right: 0; top: calc(100% + 6px); z-index: 20;
+    min-width: 170px; padding: 6px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.18);
+    display: flex; flex-direction: column; gap: 2px;
+    animation: dd-in .16s cubic-bezier(.2,.7,.3,1);
   }
-  #sort:hover, #sort:focus { border-color: var(--accent); color: var(--accent); }
+  @keyframes dd-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+  .dd-item {
+    border: none; background: none; text-align: left; cursor: pointer;
+    padding: 8px 12px; border-radius: 8px; font-size: .9rem; color: var(--text);
+    transition: background .14s ease, color .14s ease;
+  }
+  .dd-item:hover { background: var(--code-bg); }
+  .dd-item.active { color: var(--accent); background: var(--accent-soft); font-weight: 600; }
+  .dd-item.active::after { content: " ✓"; }
   .stars { white-space: nowrap; }
   #count { color: var(--muted); font-size: .85rem; margin: 0 0 14px; }
   .scope-banner {
@@ -218,10 +231,13 @@
     <button class="pill" data-type="skill">Skills</button>
     <button class="pill" data-type="agent">Subagents</button>
     <button class="pill" data-type="mcp">MCP</button>
-    <select id="sort" aria-label="Sort entries">
-      <option value="az">sort: A–Z</option>
-      <option value="stars">sort: ★ stars</option>
-    </select>
+    <div class="dropdown" id="sortdd">
+      <button class="pill dd-toggle" aria-haspopup="listbox" aria-expanded="false">sort: A–Z <span class="dd-caret">▾</span></button>
+      <div class="dd-menu" role="listbox" aria-label="Sort entries" hidden>
+        <button class="dd-item active" data-value="az" role="option">A–Z</button>
+        <button class="dd-item" data-value="stars" role="option">★ most starred</button>
+      </div>
+    </div>
   </div>
 
   <div class="scope-banner">
@@ -338,7 +354,7 @@ function render() {
   const query = cleanQuery($("#search").value);
   const shown = entries.filter((e) =>
     (!activeType || e.type === activeType) && (!query || matches(e, query)));
-  if ($("#sort").value === "stars") {
+  if (currentSort === "stars") {
     shown.sort((a, b) => (statsFor(b).stars || 0) - (statsFor(a).stars || 0));
   }
   $("#grid").innerHTML = shown.map((e, i) => card(e, i)).join("");
@@ -353,7 +369,34 @@ function esc(s) {
 }
 
 $("#search").addEventListener("input", render);
-$("#sort").addEventListener("change", render);
+
+let currentSort = "az";
+const dropdown = $("#sortdd");
+const ddToggle = dropdown.querySelector(".dd-toggle");
+const ddMenu = dropdown.querySelector(".dd-menu");
+function closeDropdown() {
+  ddMenu.hidden = true;
+  dropdown.classList.remove("open");
+  ddToggle.setAttribute("aria-expanded", "false");
+}
+ddToggle.addEventListener("click", (ev) => {
+  ev.stopPropagation();
+  const opening = ddMenu.hidden;
+  ddMenu.hidden = !opening;
+  dropdown.classList.toggle("open", opening);
+  ddToggle.setAttribute("aria-expanded", String(opening));
+});
+ddMenu.addEventListener("click", (ev) => {
+  const item = ev.target.closest(".dd-item");
+  if (!item) return;
+  currentSort = item.dataset.value;
+  ddMenu.querySelectorAll(".dd-item").forEach((b) => b.classList.toggle("active", b === item));
+  ddToggle.innerHTML = `sort: ${item.dataset.value === "stars" ? "★ stars" : "A–Z"} <span class="dd-caret">▾</span>`;
+  closeDropdown();
+  render();
+});
+document.addEventListener("click", (ev) => { if (!dropdown.contains(ev.target)) closeDropdown(); });
+document.addEventListener("keydown", (ev) => { if (ev.key === "Escape") closeDropdown(); });
 $("#empty").addEventListener("click", (ev) => {
   const link = ev.target.closest("a[data-q]");
   if (!link) return;
