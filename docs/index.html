@@ -55,6 +55,9 @@
   h1 { font-size: 2.1rem; margin: 0 0 6px; letter-spacing: -.02em; }
   h1 .dex { color: var(--accent); }
   .tagline { color: var(--muted); margin: 0 0 22px; max-width: 46rem; }
+  .guide-link { display: block; margin-top: 8px; color: var(--accent); text-decoration: none;
+    font-weight: 500; transition: opacity .15s ease; }
+  .guide-link:hover { opacity: .75; text-decoration: underline; }
   .quickstart {
     display: inline-flex; align-items: center; gap: 10px;
     background: var(--code-bg); border: 1px solid var(--border);
@@ -161,7 +164,8 @@
   <header>
     <h1>skill<span class="dex">dex</span></h1>
     <p class="tagline">A community registry of <strong>Claude Code</strong> skills, subagents, and MCP servers.
-    Search below, install with one command.</p>
+    Search below, install with one command.
+    <a class="guide-link" href="guide.html">New to skills, agents &amp; MCP? Read the 2-minute guide →</a></p>
     <div class="qs-block">
       <span class="qs-label">In your terminal</span>
       <div class="quickstart">
@@ -193,6 +197,7 @@
   </div>
 
   <footer>
+    <a href="guide.html">how it works</a> ·
     <a href="https://github.com/drewn-ed/skilldex">skilldex CLI</a> ·
     <a href="https://github.com/drewn-ed/skilldex-registry">registry source</a> ·
     MIT · Not affiliated with Anthropic.

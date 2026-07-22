@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Claude Code extensions work — skilldex</title>
+<meta name="description" content="Skills, subagents, and MCP servers explained: what they are, how Claude picks them, what they cost, and how to use them properly.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📇</text></svg>">
+<style>
+  :root {
+    --bg: #fafaf8; --surface: #ffffff; --text: #1a1a1a; --muted: #6b6b66;
+    --border: #e4e4de; --accent: #c96f4a; --accent-soft: #f6e8e1;
+    --skill: #2e7d4f; --skill-bg: #e3f2e9; --agent: #8e44ad; --agent-bg: #f3e8f9;
+    --mcp: #1976a3; --mcp-bg: #e3f0f7; --code-bg: #f0f0ea;
+    --shadow: 0 1px 3px rgba(0,0,0,.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14141a; --surface: #1d1d26; --text: #ececf1; --muted: #9a9aa6;
+      --border: #2c2c38; --accent: #e08a63; --accent-soft: #33231d;
+      --skill: #6fca96; --skill-bg: #1c2f24; --agent: #c48ad9; --agent-bg: #2c2033;
+      --mcp: #6fb6dc; --mcp-bg: #1c2a33; --code-bg: #26262f;
+      --shadow: 0 1px 3px rgba(0,0,0,.35);
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 0 20px 80px; }
+  header { padding: 44px 0 8px; }
+  .logo { font-size: 1.4rem; font-weight: 700; text-decoration: none; color: var(--text); }
+  .logo .dex { color: var(--accent); }
+  .back { font-size: .88rem; color: var(--muted); text-decoration: none; }
+  .back:hover { color: var(--accent); }
+  .topbar { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 28px; }
+  h1 { font-size: 1.9rem; letter-spacing: -.02em; margin: 0 0 8px; }
+  .lead { color: var(--muted); font-size: 1.05rem; margin: 0 0 12px; }
+  .keyline {
+    background: var(--accent-soft); border: 1px solid var(--accent); border-radius: 12px;
+    padding: 14px 18px; margin: 22px 0 34px; font-weight: 500;
+  }
+  h2 { font-size: 1.3rem; margin: 40px 0 14px; }
+  .types { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+  .type {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+    padding: 18px; box-shadow: var(--shadow);
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .type:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,.10); }
+  .badge { font-size: .68rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+    padding: 3px 9px; border-radius: 999px; }
+  .badge.skill { color: var(--skill); background: var(--skill-bg); }
+  .badge.agent { color: var(--agent); background: var(--agent-bg); }
+  .badge.mcp { color: var(--mcp); background: var(--mcp-bg); }
+  .type h3 { margin: 10px 0 6px; font-size: 1.02rem; }
+  .type p { margin: 0 0 10px; color: var(--muted); font-size: .9rem; }
+  .type .say { font-size: .82rem; background: var(--code-bg); border-radius: 8px; padding: 8px 10px; font-style: italic; }
+  code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  code { background: var(--code-bg); border-radius: 6px; padding: 2px 6px; font-size: .86em; }
+  pre { background: var(--code-bg); border-radius: 10px; padding: 14px 16px; overflow-x: auto; font-size: .85rem; line-height: 1.7; }
+  ol.flow { padding-left: 22px; }
+  ol.flow li { margin-bottom: 8px; }
+  table { border-collapse: collapse; width: 100%; font-size: .9rem; }
+  th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--border); }
+  th { color: var(--muted); font-weight: 600; font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; }
+  details {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+    padding: 0 18px; margin-bottom: 10px; box-shadow: var(--shadow);
+    transition: border-color .18s ease;
+  }
+  details:hover { border-color: var(--accent); }
+  details[open] { border-color: var(--accent); }
+  summary { cursor: pointer; font-weight: 600; padding: 14px 0; list-style: none; position: relative; padding-right: 28px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; position: absolute; right: 2px; top: 12px; color: var(--accent);
+    font-size: 1.2rem; transition: transform .2s ease; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details p, details ul { color: var(--muted); font-size: .92rem; margin-top: 0; padding-bottom: 14px; margin-bottom: 0; }
+  details p + p { padding-bottom: 0; margin-bottom: 14px; }
+  .cta { margin-top: 44px; padding: 22px; border-radius: 14px; background: var(--accent-soft); border: 1px solid var(--accent); }
+  .cta a { color: var(--accent); font-weight: 600; }
+  footer { margin-top: 56px; padding-top: 22px; border-top: 1px solid var(--border); color: var(--muted); font-size: .86rem; }
+  footer a { color: var(--accent); text-decoration: none; }
+  @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+  .wrap > * { animation: rise .5s cubic-bezier(.2,.7,.3,1) backwards; }
+  .wrap > *:nth-child(1) { animation-delay: 0ms; } .wrap > *:nth-child(2) { animation-delay: 40ms; }
+  .wrap > *:nth-child(3) { animation-delay: 80ms; } .wrap > *:nth-child(4) { animation-delay: 120ms; }
+  .wrap > *:nth-child(n+5) { animation-delay: 160ms; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="topbar">
+      <a class="logo" href="./">skill<span class="dex">dex</span></a>
+      <a class="back" href="./">← back to the registry</a>
+    </div>
+    <h1>How Claude Code extensions actually work</h1>
+    <p class="lead">Claude Code has three kinds of extensions. They look similar in a catalog,
+    but they work — and cost — very differently. Here's the mental model.</p>
+  </header>
+
+  <div class="keyline">The one thing to internalize: <strong>you almost never "call" an extension.</strong>
+  You install it, then just describe what you want — Claude picks the right tool itself.</div>
+
+  <h2>The three types</h2>
+  <div class="types">
+    <div class="type">
+      <span class="badge skill">Skill</span>
+      <h3>Instruction folders</h3>
+      <p>Expert knowledge Claude loads on demand. At session start Claude sees only each skill's
+      one-line description; when your request matches, it loads the full instructions and follows them.</p>
+      <div class="say">"Fill out this PDF form" — the pdf skill activates by itself.</div>
+    </div>
+    <div class="type">
+      <span class="badge agent">Subagent</span>
+      <h3>Specialist workers</h3>
+      <p>Separate Claude instances with their own context window and system prompt.
+      The main Claude delegates to them like a tech lead handing off tickets — automatically,
+      or when you name them.</p>
+      <div class="say">"Use the backend-architect agent to design this API."</div>
+    </div>
+    <div class="type">
+      <span class="badge mcp">MCP server</span>
+      <h3>Capability plugs</h3>
+      <p>External tools Claude can operate: a real browser, your Notion, a database, Stripe.
+      Approved once per project, then used conversationally.</p>
+      <div class="say">"Open the staging site and screenshot the checkout flow."</div>
+    </div>
+  </div>
+
+  <h2>The 60-second workflow</h2>
+  <ol class="flow">
+    <li><strong>Find</strong> something in the <a href="./">registry</a> and copy its command, or run <code>uvx skilldex search &lt;keyword&gt;</code>.</li>
+    <li><strong>Install</strong> it: <code>uvx skilldex install pdf</code>. Skills land in <code>~/.claude/skills</code>, subagents in <code>.claude/agents</code>, MCP servers in the project's <code>.mcp.json</code>.</li>
+    <li><strong>Start a new Claude Code session.</strong> MCP servers ask for a one-time approval.</li>
+    <li><strong>Just ask.</strong> Describe the task in plain words. If Claude doesn't pick the extension up, nudge it by name: <em>"use the pdf skill."</em></li>
+  </ol>
+  <pre>uvx skilldex search pdf
+uvx skilldex install pdf        # skill → available in every project
+uvx skilldex install playwright # MCP server → this project only
+uvx skilldex list               # see everything installed</pre>
+
+  <h2>What each type costs you</h2>
+  <table>
+    <tr><th>Type</th><th>Idle cost</th><th>Rule of thumb</th></tr>
+    <tr><td><span class="badge skill">Skill</span></td><td>~2 lines of context each</td><td>Install liberally</td></tr>
+    <tr><td><span class="badge agent">Subagent</span></td><td>Free until used; each use is a separate Claude run</td><td>Install freely</td></tr>
+    <tr><td><span class="badge mcp">MCP</span></td><td>Tool definitions load into every session</td><td>Connect sparingly, per project</td></tr>
+  </table>
+
+  <h2>Frequently asked questions</h2>
+
+  <details>
+    <summary>Do I call skills or agents like functions?</summary>
+    <p>No. Install them, then describe what you want in plain language. Claude reads every installed
+    extension's description and routes your request itself. Naming one ("use the pdf skill",
+    "ask the security-auditor agent") is just a nudge for when routing doesn't happen on its own.</p>
+  </details>
+
+  <details>
+    <summary>Will installing lots of extensions slow Claude down or hurt quality?</summary>
+    <p>Depends on the type. Skills are nearly free — only their one-line descriptions sit in context
+    until used. Subagents cost nothing until invoked. MCP servers are the heavy ones: every connected
+    server loads its tool definitions into each session, so ten servers means slower startup, less
+    context for your actual work, and occasional wrong-tool choices.</p>
+    <p><strong>Rule of thumb: skills liberally, agents freely, MCP sparingly per project.</strong></p>
+  </details>
+
+  <details>
+    <summary>How does an agent pack like agent-orchestration work?</summary>
+    <p>Installing it drops several specialist definitions (e.g. a context manager, task decomposers)
+    into <code>.claude/agents/</code>. When you give Claude a big multi-part task, it can delegate
+    pieces to those specialists, each in its own context window — which keeps your main conversation
+    clean and lets work run in parallel. You'll see delegation happen in the session log. Ask Claude
+    "what agents do you have available?" to see the roster.</p>
+  </details>
+
+  <details>
+    <summary>What's the difference between installing with and without --project?</summary>
+    <p>Skills and agents go to <code>~/.claude/</code> by default — available in every project.
+    Add <code>--project</code> to install into <code>./.claude/</code> instead, scoped to the current
+    repo (and shareable with your team via git). MCP servers are always project-scoped: they're
+    written to <code>./.mcp.json</code> in the directory where you run the install.</p>
+  </details>
+
+  <details>
+    <summary>Some MCP servers mention API keys. Where do I put them?</summary>
+    <p>Registry entries never contain real keys — they use <code>${VAR}</code> placeholders, and the
+    install output tells you which environment variables to set (e.g.
+    <code>export NOTION_TOKEN=...</code> in your shell profile). Never paste a real key into
+    <code>.mcp.json</code>: it's usually committed to git. <code>uvx skilldex audit</code> checks
+    your machine for exactly that mistake.</p>
+  </details>
+
+  <details>
+    <summary>How do I uninstall something?</summary>
+    <p>Delete its folder: <code>rm -rf ~/.claude/skills/&lt;id&gt;</code> (or the project-scoped
+    equivalent), remove agent files from <code>.claude/agents/</code>, and remove the server's block
+    from <code>.mcp.json</code>. <code>uvx skilldex list</code> shows where everything lives.</p>
+  </details>
+
+  <details>
+    <summary>Where do the registry's entries come from? Can I trust them?</summary>
+    <p>Every entry is a small JSON file in a public repo, added by pull request and validated by CI
+    (schema, kebab-case ids, and a scan that rejects anything resembling a hardcoded secret).
+    Entries point at their source repos — many are official (Anthropic, Notion, Stripe, Supabase,
+    Sentry, Google, Microsoft). Always review what you install; the source link is on every card.</p>
+  </details>
+
+  <details>
+    <summary>Is this an official Anthropic project?</summary>
+    <p>No — skilldex is an independent, MIT-licensed community project and isn't affiliated with
+    Anthropic. Skills, subagents, and MCP are open extension formats; skilldex is a package manager
+    for them.</p>
+  </details>
+
+  <div class="cta">
+    <strong>Built something yourself?</strong>
+    Get it listed with a one-file pull request — <a href="https://github.com/drewn-ed/skilldex-registry/blob/main/CONTRIBUTING.md">add your entry</a>.
+  </div>
+
+  <footer>
+    <a href="./">registry</a> ·
+    <a href="https://github.com/drewn-ed/skilldex">skilldex CLI</a> ·
+    <a href="https://github.com/drewn-ed/skilldex-registry">source</a> ·
+    MIT · Not affiliated with Anthropic.
+  </footer>
+</div>
+</body>
+</html>
