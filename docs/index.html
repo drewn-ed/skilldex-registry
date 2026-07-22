@@ -72,6 +72,10 @@
     display: block; font-size: .72rem; font-weight: 600; letter-spacing: .08em;
     text-transform: uppercase; color: var(--muted); margin-bottom: 6px;
   }
+  .qs-note { display: block; margin-top: 6px; font-size: .78rem; color: var(--muted); }
+  .qs-note a { color: var(--accent); text-decoration: none; }
+  .qs-note code { background: var(--code-bg); border-radius: 5px; padding: 1px 5px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .95em; }
   .empty a { color: var(--accent); cursor: pointer; text-decoration: underline; }
   .controls { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; position: sticky; top: 0; padding: 12px 0; background: var(--bg); z-index: 5; }
   #search {
@@ -172,6 +176,8 @@
         <code id="qs">uvx skilldex install pdf</code>
         <button class="copy" data-copy="uvx skilldex install pdf">copy</button>
       </div>
+      <span class="qs-note">needs <a href="https://docs.astral.sh/uv/getting-started/installation/">uv</a>
+      (<code>brew install uv</code>) — or use <code>pip install skilldex</code></span>
     </div>
   </header>
 

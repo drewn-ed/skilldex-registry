@@ -137,7 +137,8 @@
     <li><strong>Start a new Claude Code session.</strong> MCP servers ask for a one-time approval.</li>
     <li><strong>Just ask.</strong> Describe the task in plain words. If Claude doesn't pick the extension up, nudge it by name: <em>"use the pdf skill."</em></li>
   </ol>
-  <pre>uvx skilldex search pdf
+  <pre># uvx ships with uv (brew install uv) — or: pip install skilldex
+uvx skilldex search pdf
 uvx skilldex install pdf        # skill → available in every project
 uvx skilldex install playwright # MCP server → this project only
 uvx skilldex list               # see everything installed</pre>
