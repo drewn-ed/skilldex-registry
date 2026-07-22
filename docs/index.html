@@ -187,6 +187,9 @@
       </div>
       <span class="qs-note">needs <a href="https://docs.astral.sh/uv/getting-started/installation/">uv</a>
       (<code>brew install uv</code>) — or use <code>pip install skilldex</code></span>
+      <span class="qs-note">skills &amp; agents install once and work everywhere.
+      MCP servers are per-project by default — use the <strong>install for</strong> toggle on their
+      cards (or add <code>--global</code>) to enable one in every session.</span>
     </div>
   </header>
 
@@ -258,8 +261,8 @@ function card(e, i) {
     <p class="desc">${esc(e.description || "")}</p>
     ${(e.tags || []).length ? `<div class="tags">${e.tags.map((t) => `<span class="tag">${esc(t)}</span>`).join("")}</div>` : ""}
     ${e.type === "mcp" ? `<div class="scope"><span class="scope-label">install for:</span>
-      <button class="scope-btn active" data-id="${esc(e.id)}" data-flag="">this project</button>
-      <button class="scope-btn" data-id="${esc(e.id)}" data-flag=" --global">every session</button></div>` : ""}
+      <button class="scope-btn active" data-id="${esc(e.id)}" data-flag="" title="Adds the server to ./.mcp.json — only sessions started in that folder">this project</button>
+      <button class="scope-btn" data-id="${esc(e.id)}" data-flag=" --global" title="Registers the server user-wide — every Claude Code session, every folder">every session</button></div>` : ""}
     <div class="install"><code>${esc(cmd)}</code><button class="copy" data-copy="${esc(cmd)}">copy</button></div>
     <div class="meta">
       <span>${e.author ? "by " + esc(e.author) : ""}</span>
