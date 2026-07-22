@@ -1,0 +1,17 @@
+{
+  "id": "llm-application-dev",
+  "type": "agent",
+  "name": "LLM Application Dev",
+  "description": "Subagents for building LLM-powered applications: prompts, RAG, evals, and agent design.",
+  "source": {
+    "repo": "wshobson/agents",
+    "path": "plugins/llm-application-dev/agents"
+  },
+  "author": "wshobson",
+  "tags": [
+    "llm",
+    "ai",
+    "rag",
+    "prompts"
+  ]
+}

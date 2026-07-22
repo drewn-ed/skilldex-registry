@@ -1,0 +1,15 @@
+{
+  "id": "python-development",
+  "type": "agent",
+  "name": "Python Development",
+  "description": "Subagents for expert Python work: idiomatic code, typing, packaging, and performance.",
+  "source": {
+    "repo": "wshobson/agents",
+    "path": "plugins/python-development/agents"
+  },
+  "author": "wshobson",
+  "tags": [
+    "python",
+    "development"
+  ]
+}

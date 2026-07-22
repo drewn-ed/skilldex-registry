@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "count": 38,
+  "count": 44,
   "entries": [
     {
       "id": "accessibility-compliance",
@@ -82,6 +82,102 @@
         "architecture",
         "graphql",
         "performance"
+      ]
+    },
+    {
+      "id": "debugging-toolkit",
+      "type": "agent",
+      "name": "Debugging Toolkit",
+      "description": "Subagents for systematic debugging: error diagnosis, root-cause analysis, and fix verification.",
+      "source": {
+        "repo": "wshobson/agents",
+        "path": "plugins/debugging-toolkit/agents"
+      },
+      "author": "wshobson",
+      "tags": [
+        "debugging",
+        "errors",
+        "troubleshooting"
+      ]
+    },
+    {
+      "id": "kubernetes-operations",
+      "type": "agent",
+      "name": "Kubernetes Operations",
+      "description": "Subagents for K8s work: manifests, helm, cluster operations, and troubleshooting.",
+      "source": {
+        "repo": "wshobson/agents",
+        "path": "plugins/kubernetes-operations/agents"
+      },
+      "author": "wshobson",
+      "tags": [
+        "kubernetes",
+        "devops",
+        "infrastructure"
+      ]
+    },
+    {
+      "id": "llm-application-dev",
+      "type": "agent",
+      "name": "LLM Application Dev",
+      "description": "Subagents for building LLM-powered applications: prompts, RAG, evals, and agent design.",
+      "source": {
+        "repo": "wshobson/agents",
+        "path": "plugins/llm-application-dev/agents"
+      },
+      "author": "wshobson",
+      "tags": [
+        "llm",
+        "ai",
+        "rag",
+        "prompts"
+      ]
+    },
+    {
+      "id": "python-development",
+      "type": "agent",
+      "name": "Python Development",
+      "description": "Subagents for expert Python work: idiomatic code, typing, packaging, and performance.",
+      "source": {
+        "repo": "wshobson/agents",
+        "path": "plugins/python-development/agents"
+      },
+      "author": "wshobson",
+      "tags": [
+        "python",
+        "development"
+      ]
+    },
+    {
+      "id": "security-scanning",
+      "type": "agent",
+      "name": "Security Scanning",
+      "description": "Subagents for security audits: vulnerability scanning, dependency checks, and hardening.",
+      "source": {
+        "repo": "wshobson/agents",
+        "path": "plugins/security-scanning/agents"
+      },
+      "author": "wshobson",
+      "tags": [
+        "security",
+        "scanning",
+        "vulnerabilities"
+      ]
+    },
+    {
+      "id": "tdd-workflows",
+      "type": "agent",
+      "name": "TDD Workflows",
+      "description": "Subagents for test-driven development: red-green-refactor cycles and test design.",
+      "source": {
+        "repo": "wshobson/agents",
+        "path": "plugins/tdd-workflows/agents"
+      },
+      "author": "wshobson",
+      "tags": [
+        "testing",
+        "tdd",
+        "workflows"
       ]
     },
     {

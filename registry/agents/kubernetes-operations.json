@@ -1,0 +1,16 @@
+{
+  "id": "kubernetes-operations",
+  "type": "agent",
+  "name": "Kubernetes Operations",
+  "description": "Subagents for K8s work: manifests, helm, cluster operations, and troubleshooting.",
+  "source": {
+    "repo": "wshobson/agents",
+    "path": "plugins/kubernetes-operations/agents"
+  },
+  "author": "wshobson",
+  "tags": [
+    "kubernetes",
+    "devops",
+    "infrastructure"
+  ]
+}

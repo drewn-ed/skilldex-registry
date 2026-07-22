@@ -1,0 +1,69 @@
+{
+  "repos": {
+    "ChromeDevTools/chrome-devtools-mcp": {
+      "license": "Apache-2.0",
+      "pushed_at": "2026-07-21",
+      "stars": 47370
+    },
+    "anthropics/skills": {
+      "license": null,
+      "pushed_at": "2026-07-17",
+      "stars": 163289
+    },
+    "firecrawl/firecrawl-mcp-server": {
+      "license": "MIT",
+      "pushed_at": "2026-07-21",
+      "stars": 7016
+    },
+    "getsentry/sentry-mcp": {
+      "license": "NOASSERTION",
+      "pushed_at": "2026-07-22",
+      "stars": 787
+    },
+    "github/github-mcp-server": {
+      "license": "MIT",
+      "pushed_at": "2026-07-21",
+      "stars": 31619
+    },
+    "makenotion/notion-mcp-server": {
+      "license": "MIT",
+      "pushed_at": "2026-06-22",
+      "stars": 4543
+    },
+    "microsoft/playwright-mcp": {
+      "license": "Apache-2.0",
+      "pushed_at": "2026-07-15",
+      "stars": 35380
+    },
+    "modelcontextprotocol/servers": {
+      "license": "NOASSERTION",
+      "pushed_at": "2026-07-10",
+      "stars": 88754
+    },
+    "oraios/serena": {
+      "license": "MIT",
+      "pushed_at": "2026-07-21",
+      "stars": 26690
+    },
+    "stripe/ai": {
+      "license": "MIT",
+      "pushed_at": "2026-07-22",
+      "stars": 1699
+    },
+    "supabase/mcp": {
+      "license": "Apache-2.0",
+      "pushed_at": "2026-07-22",
+      "stars": 2827
+    },
+    "upstash/context7": {
+      "license": "MIT",
+      "pushed_at": "2026-07-21",
+      "stars": 59571
+    },
+    "wshobson/agents": {
+      "license": "MIT",
+      "pushed_at": "2026-07-20",
+      "stars": 38129
+    }
+  }
+}

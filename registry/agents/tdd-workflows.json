@@ -1,0 +1,16 @@
+{
+  "id": "tdd-workflows",
+  "type": "agent",
+  "name": "TDD Workflows",
+  "description": "Subagents for test-driven development: red-green-refactor cycles and test design.",
+  "source": {
+    "repo": "wshobson/agents",
+    "path": "plugins/tdd-workflows/agents"
+  },
+  "author": "wshobson",
+  "tags": [
+    "testing",
+    "tdd",
+    "workflows"
+  ]
+}

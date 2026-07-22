@@ -62,6 +62,12 @@ in an entry — use `${VAR}` placeholders (CI rejects anything that looks like a
 | `api-scaffolding` | Subagents for designing and scaffolding REST and GraphQL APIs. | [wshobson/agents](https://github.com/wshobson/agents) |
 | `application-performance` | Subagents for profiling, load testing, and performance optimization. | [wshobson/agents](https://github.com/wshobson/agents) |
 | `backend-development` | Subagents for backend work: architecture, GraphQL, event sourcing, and performance engineering. | [wshobson/agents](https://github.com/wshobson/agents) |
+| `debugging-toolkit` | Subagents for systematic debugging: error diagnosis, root-cause analysis, and fix verification. | [wshobson/agents](https://github.com/wshobson/agents) |
+| `kubernetes-operations` | Subagents for K8s work: manifests, helm, cluster operations, and troubleshooting. | [wshobson/agents](https://github.com/wshobson/agents) |
+| `llm-application-dev` | Subagents for building LLM-powered applications: prompts, RAG, evals, and agent design. | [wshobson/agents](https://github.com/wshobson/agents) |
+| `python-development` | Subagents for expert Python work: idiomatic code, typing, packaging, and performance. | [wshobson/agents](https://github.com/wshobson/agents) |
+| `security-scanning` | Subagents for security audits: vulnerability scanning, dependency checks, and hardening. | [wshobson/agents](https://github.com/wshobson/agents) |
+| `tdd-workflows` | Subagents for test-driven development: red-green-refactor cycles and test design. | [wshobson/agents](https://github.com/wshobson/agents) |
 
 ### MCP Servers
 

@@ -1,0 +1,16 @@
+{
+  "id": "security-scanning",
+  "type": "agent",
+  "name": "Security Scanning",
+  "description": "Subagents for security audits: vulnerability scanning, dependency checks, and hardening.",
+  "source": {
+    "repo": "wshobson/agents",
+    "path": "plugins/security-scanning/agents"
+  },
+  "author": "wshobson",
+  "tags": [
+    "security",
+    "scanning",
+    "vulnerabilities"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "debugging-toolkit",
+  "type": "agent",
+  "name": "Debugging Toolkit",
+  "description": "Subagents for systematic debugging: error diagnosis, root-cause analysis, and fix verification.",
+  "source": {
+    "repo": "wshobson/agents",
+    "path": "plugins/debugging-toolkit/agents"
+  },
+  "author": "wshobson",
+  "tags": [
+    "debugging",
+    "errors",
+    "troubleshooting"
+  ]
+}

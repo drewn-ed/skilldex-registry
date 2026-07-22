@@ -96,6 +96,14 @@
   .pill:hover { border-color: var(--accent); color: var(--accent); }
   .pill:active { transform: scale(.95); }
   .pill.active { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+  #sort {
+    padding: 9px 12px; border-radius: 999px; cursor: pointer;
+    border: 1px solid var(--border); background: var(--surface);
+    color: var(--muted); font-size: .9rem; font-weight: 500; outline: none;
+    transition: border-color .18s ease, color .18s ease;
+  }
+  #sort:hover, #sort:focus { border-color: var(--accent); color: var(--accent); }
+  .stars { white-space: nowrap; }
   #count { color: var(--muted); font-size: .85rem; margin: 0 0 14px; }
   .scope-banner {
     display: flex; flex-direction: column; gap: 9px;
@@ -210,6 +218,10 @@
     <button class="pill" data-type="skill">Skills</button>
     <button class="pill" data-type="agent">Subagents</button>
     <button class="pill" data-type="mcp">MCP</button>
+    <select id="sort" aria-label="Sort entries">
+      <option value="az">sort: A–Z</option>
+      <option value="stars">sort: ★ stars</option>
+    </select>
   </div>
 
   <div class="scope-banner">
@@ -249,10 +261,27 @@ let activeType = "";
 const $ = (s) => document.querySelector(s);
 
 let loadFailed = false;
-fetch("index.json", { cache: "no-store" })
-  .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
-  .then((data) => { entries = data.entries || []; render(); })
+let repoStats = {};
+Promise.all([
+  fetch("index.json", { cache: "no-store" })
+    .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); }),
+  fetch("stats.json", { cache: "no-store" }).then((r) => (r.ok ? r.json() : {})).catch(() => ({})),
+])
+  .then(([data, stats]) => {
+    entries = data.entries || [];
+    repoStats = stats.repos || {};
+    render();
+  })
   .catch(() => { loadFailed = true; render(); });
+
+function statsFor(e) {
+  return (e.source && repoStats[e.source.repo]) || {};
+}
+
+function formatStars(n) {
+  if (!n) return "";
+  return n >= 1000 ? (n / 1000).toFixed(1).replace(/\.0$/, "") + "k" : String(n);
+}
 
 // Be forgiving when someone pastes a terminal command into the search box:
 // "uvx skilldex search <pdf>" should just search for "pdf".
@@ -285,7 +314,13 @@ function card(e, i) {
       <button class="scope-btn" data-id="${esc(e.id)}" data-flag=" --global" title="Registers the server user-wide — every Claude Code session, every folder">every session</button></div>` : ""}
     <div class="install"><code>${esc(cmd)}</code><button class="copy" data-copy="${esc(cmd)}">copy</button></div>
     <div class="meta">
-      <span>${e.author ? "by " + esc(e.author) : ""}</span>
+      <span>${e.author ? "by " + esc(e.author) : ""}${(() => {
+        const s = statsFor(e);
+        const bits = [];
+        if (s.stars) bits.push(`<span class="stars" title="GitHub stars${s.pushed_at ? " · updated " + s.pushed_at : ""}">★ ${formatStars(s.stars)}</span>`);
+        if (s.license && s.license !== "NOASSERTION") bits.push(esc(s.license));
+        return bits.length ? " · " + bits.join(" · ") : "";
+      })()}</span>
       ${repo ? `<a href="https://github.com/${esc(repo)}" target="_blank" rel="noopener">${esc(repo)}</a>` : ""}
     </div>
   </div>`;
@@ -303,6 +338,9 @@ function render() {
   const query = cleanQuery($("#search").value);
   const shown = entries.filter((e) =>
     (!activeType || e.type === activeType) && (!query || matches(e, query)));
+  if ($("#sort").value === "stars") {
+    shown.sort((a, b) => (statsFor(b).stars || 0) - (statsFor(a).stars || 0));
+  }
   $("#grid").innerHTML = shown.map((e, i) => card(e, i)).join("");
   firstRender = false;
   $("#empty").hidden = shown.length > 0;
@@ -315,6 +353,7 @@ function esc(s) {
 }
 
 $("#search").addEventListener("input", render);
+$("#sort").addEventListener("change", render);
 $("#empty").addEventListener("click", (ev) => {
   const link = ev.target.closest("a[data-q]");
   if (!link) return;
