@@ -1,0 +1,24 @@
+{
+  "id": "antv-chart",
+  "type": "mcp",
+  "name": "AntV Chart",
+  "description": "AntV's official MCP server: generate 25+ chart types as images from data.",
+  "author": "AntV",
+  "tags": [
+    "charts",
+    "visualization",
+    "data"
+  ],
+  "source": {
+    "repo": "antvis/mcp-server-chart",
+    "path": "."
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@antv/mcp-server-chart"
+    ]
+  }
+}

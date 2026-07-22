@@ -1,0 +1,23 @@
+{
+  "id": "dbt",
+  "type": "mcp",
+  "name": "dbt",
+  "description": "dbt Labs' official MCP server: explore models, run transformations, and query metadata.",
+  "author": "dbt Labs",
+  "tags": [
+    "dbt",
+    "data",
+    "analytics"
+  ],
+  "source": {
+    "repo": "dbt-labs/dbt-mcp",
+    "path": "."
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "uvx",
+    "args": [
+      "dbt-mcp"
+    ]
+  }
+}

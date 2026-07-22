@@ -1,0 +1,20 @@
+{
+  "id": "cloudflare-docs",
+  "type": "mcp",
+  "name": "Cloudflare Docs",
+  "description": "Cloudflare's official remote MCP server for searching Cloudflare documentation.",
+  "author": "Cloudflare",
+  "tags": [
+    "cloudflare",
+    "documentation",
+    "cloud"
+  ],
+  "source": {
+    "repo": "cloudflare/mcp-server-cloudflare",
+    "path": "."
+  },
+  "mcp": {
+    "type": "sse",
+    "url": "https://docs.mcp.cloudflare.com/sse"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "chroma",
+  "type": "mcp",
+  "name": "Chroma",
+  "description": "Chroma's official MCP server: vector database for embeddings, collections, and semantic search.",
+  "author": "Chroma",
+  "tags": [
+    "vectordb",
+    "embeddings",
+    "rag"
+  ],
+  "source": {
+    "repo": "chroma-core/chroma-mcp",
+    "path": "."
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "uvx",
+    "args": [
+      "chroma-mcp"
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "circleci",
+  "type": "mcp",
+  "name": "CircleCI",
+  "description": "CircleCI's official MCP server: find failed builds, fix flaky tests, monitor pipelines.",
+  "author": "CircleCI",
+  "tags": [
+    "cicd",
+    "builds",
+    "devops"
+  ],
+  "source": {
+    "repo": "CircleCI-Public/mcp-server-circleci",
+    "path": "."
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@circleci/mcp-server-circleci"
+    ],
+    "env": {
+      "CIRCLECI_TOKEN": "${CIRCLECI_TOKEN}"
+    }
+  }
+}

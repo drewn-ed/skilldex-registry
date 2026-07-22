@@ -1,0 +1,29 @@
+{
+  "id": "twilio",
+  "type": "mcp",
+  "name": "Twilio",
+  "description": "Twilio's official (alpha) MCP server: SMS, voice, and the full Twilio API surface.",
+  "author": "Twilio",
+  "tags": [
+    "sms",
+    "voice",
+    "communications"
+  ],
+  "source": {
+    "repo": "twilio-labs/mcp",
+    "path": "."
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@twilio-alpha/mcp"
+    ],
+    "env": {
+      "TWILIO_ACCOUNT_SID": "${TWILIO_ACCOUNT_SID}",
+      "TWILIO_API_KEY": "${TWILIO_API_KEY}",
+      "TWILIO_API_SECRET": "${TWILIO_API_SECRET}"
+    }
+  }
+}

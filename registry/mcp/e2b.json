@@ -1,0 +1,27 @@
+{
+  "id": "e2b",
+  "type": "mcp",
+  "name": "E2B Code Sandbox",
+  "description": "E2B's official MCP server: run code safely in cloud sandboxes.",
+  "author": "E2B",
+  "tags": [
+    "sandbox",
+    "code-execution",
+    "cloud"
+  ],
+  "source": {
+    "repo": "e2b-dev/mcp-server",
+    "path": "."
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@e2b/mcp-server"
+    ],
+    "env": {
+      "E2B_API_KEY": "${E2B_API_KEY}"
+    }
+  }
+}

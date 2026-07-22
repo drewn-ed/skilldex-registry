@@ -1,0 +1,16 @@
+{
+  "id": "dispatching-parallel-agents",
+  "type": "skill",
+  "name": "Dispatching Parallel Agents",
+  "description": "Coordinate parallel subagent work: decomposition and result merging.",
+  "author": "obra",
+  "tags": [
+    "agents",
+    "parallel",
+    "orchestration"
+  ],
+  "source": {
+    "repo": "obra/superpowers",
+    "path": "skills/dispatching-parallel-agents"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "writing-skills",
+  "type": "skill",
+  "name": "Writing Skills",
+  "description": "Meta-skill for authoring effective Claude Code skills.",
+  "author": "obra",
+  "tags": [
+    "meta",
+    "authoring",
+    "skills"
+  ],
+  "source": {
+    "repo": "obra/superpowers",
+    "path": "skills/writing-skills"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "requesting-code-review",
+  "type": "skill",
+  "name": "Requesting Code Review",
+  "description": "Prepare changes for review: context, scope, and reviewable diffs.",
+  "author": "obra",
+  "tags": [
+    "code-review",
+    "collaboration"
+  ],
+  "source": {
+    "repo": "obra/superpowers",
+    "path": "skills/requesting-code-review"
+  }
+}

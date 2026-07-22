@@ -1,0 +1,15 @@
+{
+  "id": "security-and-hardening",
+  "type": "skill",
+  "name": "Security & Hardening",
+  "description": "Secure coding and hardening practices: input validation, secrets, dependencies, and attack surface.",
+  "author": "Addy Osmani",
+  "tags": [
+    "security",
+    "hardening"
+  ],
+  "source": {
+    "repo": "addyosmani/agent-skills",
+    "path": "skills/security-and-hardening"
+  }
+}

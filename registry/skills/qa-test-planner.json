@@ -1,0 +1,16 @@
+{
+  "id": "qa-test-planner",
+  "type": "skill",
+  "name": "QA Test Planner",
+  "description": "Plan test coverage: test cases, edge cases, and regression suites.",
+  "author": "Softaworks",
+  "tags": [
+    "qa",
+    "testing",
+    "planning"
+  ],
+  "source": {
+    "repo": "softaworks/agent-toolkit",
+    "path": "skills/qa-test-planner"
+  }
+}

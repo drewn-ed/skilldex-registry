@@ -1,0 +1,27 @@
+{
+  "id": "brave-search",
+  "type": "mcp",
+  "name": "Brave Search",
+  "description": "Brave's official MCP server: web, image, news, and video search with AI summaries.",
+  "author": "Brave",
+  "tags": [
+    "search",
+    "web",
+    "privacy"
+  ],
+  "source": {
+    "repo": "brave/brave-search-mcp-server",
+    "path": "."
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@brave/brave-search-mcp-server"
+    ],
+    "env": {
+      "BRAVE_API_KEY": "${BRAVE_API_KEY}"
+    }
+  }
+}

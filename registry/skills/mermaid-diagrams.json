@@ -1,0 +1,16 @@
+{
+  "id": "mermaid-diagrams",
+  "type": "skill",
+  "name": "Mermaid Diagrams",
+  "description": "Create clear Mermaid diagrams: flowcharts, sequence diagrams, and architecture visuals.",
+  "author": "Softaworks",
+  "tags": [
+    "diagrams",
+    "mermaid",
+    "documentation"
+  ],
+  "source": {
+    "repo": "softaworks/agent-toolkit",
+    "path": "skills/mermaid-diagrams"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "performance-optimization",
+  "type": "skill",
+  "name": "Performance Optimization",
+  "description": "Find and fix performance bottlenecks: measurement first, then targeted optimization.",
+  "author": "Addy Osmani",
+  "tags": [
+    "performance",
+    "optimization"
+  ],
+  "source": {
+    "repo": "addyosmani/agent-skills",
+    "path": "skills/performance-optimization"
+  }
+}

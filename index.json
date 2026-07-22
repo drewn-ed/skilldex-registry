@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "count": 86,
+  "count": 119,
   "entries": [
     {
       "id": "accessibility-compliance",
@@ -329,6 +329,57 @@
       }
     },
     {
+      "id": "antv-chart",
+      "type": "mcp",
+      "name": "AntV Chart",
+      "description": "AntV's official MCP server: generate 25+ chart types as images from data.",
+      "author": "AntV",
+      "tags": [
+        "charts",
+        "visualization",
+        "data"
+      ],
+      "source": {
+        "repo": "antvis/mcp-server-chart",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "@antv/mcp-server-chart"
+        ]
+      }
+    },
+    {
+      "id": "apify",
+      "type": "mcp",
+      "name": "Apify Actors",
+      "description": "Apify's official MCP server: run 3000+ pre-built web scraping and automation actors.",
+      "author": "Apify",
+      "tags": [
+        "scraping",
+        "automation",
+        "data"
+      ],
+      "source": {
+        "repo": "apify/actors-mcp-server",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "@apify/actors-mcp-server"
+        ],
+        "env": {
+          "APIFY_TOKEN": "${APIFY_TOKEN}"
+        }
+      }
+    },
+    {
       "id": "aws-docs",
       "type": "mcp",
       "name": "AWS Documentation",
@@ -378,6 +429,164 @@
       }
     },
     {
+      "id": "azure-devops",
+      "type": "mcp",
+      "name": "Azure DevOps",
+      "description": "Microsoft's official Azure DevOps MCP server: work items, repos, builds, and boards.",
+      "author": "Microsoft",
+      "tags": [
+        "azure",
+        "devops",
+        "microsoft"
+      ],
+      "source": {
+        "repo": "microsoft/azure-devops-mcp",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "@azure-devops/mcp",
+          "${ADO_ORG}"
+        ]
+      }
+    },
+    {
+      "id": "brave-search",
+      "type": "mcp",
+      "name": "Brave Search",
+      "description": "Brave's official MCP server: web, image, news, and video search with AI summaries.",
+      "author": "Brave",
+      "tags": [
+        "search",
+        "web",
+        "privacy"
+      ],
+      "source": {
+        "repo": "brave/brave-search-mcp-server",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "@brave/brave-search-mcp-server"
+        ],
+        "env": {
+          "BRAVE_API_KEY": "${BRAVE_API_KEY}"
+        }
+      }
+    },
+    {
+      "id": "brightdata",
+      "type": "mcp",
+      "name": "Bright Data",
+      "description": "Bright Data's official MCP server: web scraping that gets past blocks, plus search and structured data feeds.",
+      "author": "Bright Data",
+      "tags": [
+        "scraping",
+        "data",
+        "web"
+      ],
+      "source": {
+        "repo": "brightdata/brightdata-mcp",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "@brightdata/mcp"
+        ],
+        "env": {
+          "API_TOKEN": "${BRIGHTDATA_API_TOKEN}"
+        }
+      }
+    },
+    {
+      "id": "browserbase",
+      "type": "mcp",
+      "name": "Browserbase",
+      "description": "Browserbase's official MCP server: cloud headless browsers for automation at scale.",
+      "author": "Browserbase",
+      "tags": [
+        "browser",
+        "automation",
+        "cloud"
+      ],
+      "source": {
+        "repo": "browserbase/mcp-server-browserbase",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "@browserbasehq/mcp"
+        ],
+        "env": {
+          "BROWSERBASE_API_KEY": "${BROWSERBASE_API_KEY}",
+          "BROWSERBASE_PROJECT_ID": "${BROWSERBASE_PROJECT_ID}"
+        }
+      }
+    },
+    {
+      "id": "browserstack",
+      "type": "mcp",
+      "name": "BrowserStack",
+      "description": "BrowserStack's official MCP server: run tests on real devices and browsers.",
+      "author": "BrowserStack",
+      "tags": [
+        "testing",
+        "browsers",
+        "devices"
+      ],
+      "source": {
+        "repo": "browserstack/mcp-server",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "@browserstack/mcp-server"
+        ],
+        "env": {
+          "BROWSERSTACK_USERNAME": "${BROWSERSTACK_USERNAME}",
+          "BROWSERSTACK_ACCESS_KEY": "${BROWSERSTACK_ACCESS_KEY}"
+        }
+      }
+    },
+    {
+      "id": "chroma",
+      "type": "mcp",
+      "name": "Chroma",
+      "description": "Chroma's official MCP server: vector database for embeddings, collections, and semantic search.",
+      "author": "Chroma",
+      "tags": [
+        "vectordb",
+        "embeddings",
+        "rag"
+      ],
+      "source": {
+        "repo": "chroma-core/chroma-mcp",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "uvx",
+        "args": [
+          "chroma-mcp"
+        ]
+      }
+    },
+    {
       "id": "chrome-devtools",
       "type": "mcp",
       "name": "Chrome DevTools",
@@ -401,6 +610,81 @@
         "devtools",
         "performance"
       ]
+    },
+    {
+      "id": "circleci",
+      "type": "mcp",
+      "name": "CircleCI",
+      "description": "CircleCI's official MCP server: find failed builds, fix flaky tests, monitor pipelines.",
+      "author": "CircleCI",
+      "tags": [
+        "cicd",
+        "builds",
+        "devops"
+      ],
+      "source": {
+        "repo": "CircleCI-Public/mcp-server-circleci",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "@circleci/mcp-server-circleci"
+        ],
+        "env": {
+          "CIRCLECI_TOKEN": "${CIRCLECI_TOKEN}"
+        }
+      }
+    },
+    {
+      "id": "clickhouse",
+      "type": "mcp",
+      "name": "ClickHouse",
+      "description": "ClickHouse's official MCP server: run analytical SQL queries against your cluster.",
+      "author": "ClickHouse",
+      "tags": [
+        "database",
+        "analytics",
+        "sql"
+      ],
+      "source": {
+        "repo": "ClickHouse/mcp-clickhouse",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "uvx",
+        "args": [
+          "mcp-clickhouse"
+        ],
+        "env": {
+          "CLICKHOUSE_HOST": "${CLICKHOUSE_HOST}",
+          "CLICKHOUSE_USER": "${CLICKHOUSE_USER}",
+          "CLICKHOUSE_PASSWORD": "${CLICKHOUSE_PASSWORD}"
+        }
+      }
+    },
+    {
+      "id": "cloudflare-docs",
+      "type": "mcp",
+      "name": "Cloudflare Docs",
+      "description": "Cloudflare's official remote MCP server for searching Cloudflare documentation.",
+      "author": "Cloudflare",
+      "tags": [
+        "cloudflare",
+        "documentation",
+        "cloud"
+      ],
+      "source": {
+        "repo": "cloudflare/mcp-server-cloudflare",
+        "path": "."
+      },
+      "mcp": {
+        "type": "sse",
+        "url": "https://docs.mcp.cloudflare.com/sse"
+      }
     },
     {
       "id": "context7",
@@ -427,6 +711,56 @@
       ]
     },
     {
+      "id": "dbt",
+      "type": "mcp",
+      "name": "dbt",
+      "description": "dbt Labs' official MCP server: explore models, run transformations, and query metadata.",
+      "author": "dbt Labs",
+      "tags": [
+        "dbt",
+        "data",
+        "analytics"
+      ],
+      "source": {
+        "repo": "dbt-labs/dbt-mcp",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "uvx",
+        "args": [
+          "dbt-mcp"
+        ]
+      }
+    },
+    {
+      "id": "e2b",
+      "type": "mcp",
+      "name": "E2B Code Sandbox",
+      "description": "E2B's official MCP server: run code safely in cloud sandboxes.",
+      "author": "E2B",
+      "tags": [
+        "sandbox",
+        "code-execution",
+        "cloud"
+      ],
+      "source": {
+        "repo": "e2b-dev/mcp-server",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "@e2b/mcp-server"
+        ],
+        "env": {
+          "E2B_API_KEY": "${E2B_API_KEY}"
+        }
+      }
+    },
+    {
       "id": "elasticsearch",
       "type": "mcp",
       "name": "Elasticsearch",
@@ -451,6 +785,32 @@
         "env": {
           "ES_URL": "${ES_URL}",
           "ES_API_KEY": "${ES_API_KEY}"
+        }
+      }
+    },
+    {
+      "id": "elevenlabs",
+      "type": "mcp",
+      "name": "ElevenLabs",
+      "description": "ElevenLabs' official MCP server: text-to-speech and voice generation.",
+      "author": "ElevenLabs",
+      "tags": [
+        "audio",
+        "tts",
+        "voice"
+      ],
+      "source": {
+        "repo": "elevenlabs/elevenlabs-mcp",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "uvx",
+        "args": [
+          "elevenlabs-mcp"
+        ],
+        "env": {
+          "ELEVENLABS_API_KEY": "${ELEVENLABS_API_KEY}"
         }
       }
     },
@@ -503,6 +863,34 @@
         "http",
         "markdown"
       ]
+    },
+    {
+      "id": "figma",
+      "type": "mcp",
+      "name": "Figma Context",
+      "description": "Framelink's Figma MCP server: give Claude your Figma designs for accurate design-to-code.",
+      "author": "Framelink",
+      "tags": [
+        "figma",
+        "design",
+        "frontend"
+      ],
+      "source": {
+        "repo": "GLips/Figma-Context-MCP",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "figma-developer-mcp",
+          "--stdio"
+        ],
+        "env": {
+          "FIGMA_API_KEY": "${FIGMA_API_KEY}"
+        }
+      }
     },
     {
       "id": "filesystem",
@@ -653,6 +1041,33 @@
         "project-management",
         "productivity"
       ]
+    },
+    {
+      "id": "magic-ui",
+      "type": "mcp",
+      "name": "21st.dev Magic",
+      "description": "21st.dev's Magic MCP server: generate polished UI components from natural language.",
+      "author": "21st.dev",
+      "tags": [
+        "ui",
+        "components",
+        "frontend"
+      ],
+      "source": {
+        "repo": "21st-dev/magic-mcp",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "@21st-dev/magic"
+        ],
+        "env": {
+          "API_KEY": "${TWENTYFIRST_API_KEY}"
+        }
+      }
     },
     {
       "id": "memory",
@@ -1039,6 +1454,35 @@
       ]
     },
     {
+      "id": "twilio",
+      "type": "mcp",
+      "name": "Twilio",
+      "description": "Twilio's official (alpha) MCP server: SMS, voice, and the full Twilio API surface.",
+      "author": "Twilio",
+      "tags": [
+        "sms",
+        "voice",
+        "communications"
+      ],
+      "source": {
+        "repo": "twilio-labs/mcp",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "@twilio-alpha/mcp"
+        ],
+        "env": {
+          "TWILIO_ACCOUNT_SID": "${TWILIO_ACCOUNT_SID}",
+          "TWILIO_API_KEY": "${TWILIO_API_KEY}",
+          "TWILIO_API_SECRET": "${TWILIO_API_SECRET}"
+        }
+      }
+    },
+    {
       "id": "vercel",
       "type": "mcp",
       "name": "Vercel",
@@ -1244,6 +1688,38 @@
       ]
     },
     {
+      "id": "crafting-effective-readmes",
+      "type": "skill",
+      "name": "Crafting Effective READMEs",
+      "description": "Write READMEs that convert visitors into users: structure, examples, and badges.",
+      "author": "Softaworks",
+      "tags": [
+        "readme",
+        "documentation",
+        "writing"
+      ],
+      "source": {
+        "repo": "softaworks/agent-toolkit",
+        "path": "skills/crafting-effective-readmes"
+      }
+    },
+    {
+      "id": "database-schema-designer",
+      "type": "skill",
+      "name": "Database Schema Designer",
+      "description": "Design normalized, scalable database schemas with sensible indexing.",
+      "author": "Softaworks",
+      "tags": [
+        "database",
+        "schema",
+        "design"
+      ],
+      "source": {
+        "repo": "softaworks/agent-toolkit",
+        "path": "skills/database-schema-designer"
+      }
+    },
+    {
       "id": "debugging-and-error-recovery",
       "type": "skill",
       "name": "Debugging & Error Recovery",
@@ -1258,6 +1734,22 @@
         "errors",
         "engineering"
       ]
+    },
+    {
+      "id": "dispatching-parallel-agents",
+      "type": "skill",
+      "name": "Dispatching Parallel Agents",
+      "description": "Coordinate parallel subagent work: decomposition and result merging.",
+      "author": "obra",
+      "tags": [
+        "agents",
+        "parallel",
+        "orchestration"
+      ],
+      "source": {
+        "repo": "obra/superpowers",
+        "path": "skills/dispatching-parallel-agents"
+      }
     },
     {
       "id": "doc-coauthoring",
@@ -1276,6 +1768,22 @@
       ]
     },
     {
+      "id": "documentation-and-adrs",
+      "type": "skill",
+      "name": "Documentation & ADRs",
+      "description": "Write docs that last: architecture decision records, READMEs, and API docs.",
+      "author": "Addy Osmani",
+      "tags": [
+        "documentation",
+        "adr",
+        "writing"
+      ],
+      "source": {
+        "repo": "addyosmani/agent-skills",
+        "path": "skills/documentation-and-adrs"
+      }
+    },
+    {
       "id": "docx",
       "type": "skill",
       "name": "Word Documents",
@@ -1290,6 +1798,22 @@
         "word",
         "office"
       ]
+    },
+    {
+      "id": "executing-plans",
+      "type": "skill",
+      "name": "Executing Plans",
+      "description": "Superpowers skill for working through implementation plans step by step with verification.",
+      "author": "obra",
+      "tags": [
+        "planning",
+        "execution",
+        "workflow"
+      ],
+      "source": {
+        "repo": "obra/superpowers",
+        "path": "skills/executing-plans"
+      }
     },
     {
       "id": "frontend-design",
@@ -1322,6 +1846,22 @@
       "source": {
         "repo": "addyosmani/agent-skills",
         "path": "skills/frontend-ui-engineering"
+      }
+    },
+    {
+      "id": "git-workflow-and-versioning",
+      "type": "skill",
+      "name": "Git Workflow & Versioning",
+      "description": "Effective git usage: branching strategy, commit hygiene, and semantic versioning.",
+      "author": "Addy Osmani",
+      "tags": [
+        "git",
+        "versioning",
+        "workflow"
+      ],
+      "source": {
+        "repo": "addyosmani/agent-skills",
+        "path": "skills/git-workflow-and-versioning"
       }
     },
     {
@@ -1419,6 +1959,22 @@
       ]
     },
     {
+      "id": "mermaid-diagrams",
+      "type": "skill",
+      "name": "Mermaid Diagrams",
+      "description": "Create clear Mermaid diagrams: flowcharts, sequence diagrams, and architecture visuals.",
+      "author": "Softaworks",
+      "tags": [
+        "diagrams",
+        "mermaid",
+        "documentation"
+      ],
+      "source": {
+        "repo": "softaworks/agent-toolkit",
+        "path": "skills/mermaid-diagrams"
+      }
+    },
+    {
       "id": "pdf",
       "type": "skill",
       "name": "PDF Toolkit",
@@ -1435,6 +1991,36 @@
       ]
     },
     {
+      "id": "performance-optimization",
+      "type": "skill",
+      "name": "Performance Optimization",
+      "description": "Find and fix performance bottlenecks: measurement first, then targeted optimization.",
+      "author": "Addy Osmani",
+      "tags": [
+        "performance",
+        "optimization"
+      ],
+      "source": {
+        "repo": "addyosmani/agent-skills",
+        "path": "skills/performance-optimization"
+      }
+    },
+    {
+      "id": "planning-and-task-breakdown",
+      "type": "skill",
+      "name": "Planning & Task Breakdown",
+      "description": "Break large goals into ordered, estimable tasks with clear acceptance criteria.",
+      "author": "Addy Osmani",
+      "tags": [
+        "planning",
+        "tasks"
+      ],
+      "source": {
+        "repo": "addyosmani/agent-skills",
+        "path": "skills/planning-and-task-breakdown"
+      }
+    },
+    {
       "id": "pptx",
       "type": "skill",
       "name": "PowerPoint Presentations",
@@ -1449,6 +2035,52 @@
         "powerpoint",
         "office"
       ]
+    },
+    {
+      "id": "qa-test-planner",
+      "type": "skill",
+      "name": "QA Test Planner",
+      "description": "Plan test coverage: test cases, edge cases, and regression suites.",
+      "author": "Softaworks",
+      "tags": [
+        "qa",
+        "testing",
+        "planning"
+      ],
+      "source": {
+        "repo": "softaworks/agent-toolkit",
+        "path": "skills/qa-test-planner"
+      }
+    },
+    {
+      "id": "requesting-code-review",
+      "type": "skill",
+      "name": "Requesting Code Review",
+      "description": "Prepare changes for review: context, scope, and reviewable diffs.",
+      "author": "obra",
+      "tags": [
+        "code-review",
+        "collaboration"
+      ],
+      "source": {
+        "repo": "obra/superpowers",
+        "path": "skills/requesting-code-review"
+      }
+    },
+    {
+      "id": "security-and-hardening",
+      "type": "skill",
+      "name": "Security & Hardening",
+      "description": "Secure coding and hardening practices: input validation, secrets, dependencies, and attack surface.",
+      "author": "Addy Osmani",
+      "tags": [
+        "security",
+        "hardening"
+      ],
+      "source": {
+        "repo": "addyosmani/agent-skills",
+        "path": "skills/security-and-hardening"
+      }
     },
     {
       "id": "skill-creator",
@@ -1481,6 +2113,22 @@
         "slack",
         "creative"
       ]
+    },
+    {
+      "id": "spec-driven-development",
+      "type": "skill",
+      "name": "Spec-Driven Development",
+      "description": "Write the spec first, then implement against it: tighter scope, fewer surprises.",
+      "author": "Addy Osmani",
+      "tags": [
+        "specs",
+        "workflow",
+        "process"
+      ],
+      "source": {
+        "repo": "addyosmani/agent-skills",
+        "path": "skills/spec-driven-development"
+      }
     },
     {
       "id": "systematic-debugging",
@@ -1546,6 +2194,38 @@
       ]
     },
     {
+      "id": "using-git-worktrees",
+      "type": "skill",
+      "name": "Using Git Worktrees",
+      "description": "Work on multiple branches in parallel with git worktrees.",
+      "author": "obra",
+      "tags": [
+        "git",
+        "worktrees",
+        "workflow"
+      ],
+      "source": {
+        "repo": "obra/superpowers",
+        "path": "skills/using-git-worktrees"
+      }
+    },
+    {
+      "id": "verification-before-completion",
+      "type": "skill",
+      "name": "Verification Before Completion",
+      "description": "Never claim done without proof: verify behavior before reporting completion.",
+      "author": "obra",
+      "tags": [
+        "verification",
+        "quality",
+        "workflow"
+      ],
+      "source": {
+        "repo": "obra/superpowers",
+        "path": "skills/verification-before-completion"
+      }
+    },
+    {
       "id": "web-artifacts-builder",
       "type": "skill",
       "name": "Web Artifacts Builder",
@@ -1606,6 +2286,22 @@
       "source": {
         "repo": "obra/superpowers",
         "path": "skills/writing-plans"
+      }
+    },
+    {
+      "id": "writing-skills",
+      "type": "skill",
+      "name": "Writing Skills",
+      "description": "Meta-skill for authoring effective Claude Code skills.",
+      "author": "obra",
+      "tags": [
+        "meta",
+        "authoring",
+        "skills"
+      ],
+      "source": {
+        "repo": "obra/superpowers",
+        "path": "skills/writing-skills"
       }
     },
     {

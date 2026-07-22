@@ -1,0 +1,28 @@
+{
+  "id": "clickhouse",
+  "type": "mcp",
+  "name": "ClickHouse",
+  "description": "ClickHouse's official MCP server: run analytical SQL queries against your cluster.",
+  "author": "ClickHouse",
+  "tags": [
+    "database",
+    "analytics",
+    "sql"
+  ],
+  "source": {
+    "repo": "ClickHouse/mcp-clickhouse",
+    "path": "."
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "uvx",
+    "args": [
+      "mcp-clickhouse"
+    ],
+    "env": {
+      "CLICKHOUSE_HOST": "${CLICKHOUSE_HOST}",
+      "CLICKHOUSE_USER": "${CLICKHOUSE_USER}",
+      "CLICKHOUSE_PASSWORD": "${CLICKHOUSE_PASSWORD}"
+    }
+  }
+}

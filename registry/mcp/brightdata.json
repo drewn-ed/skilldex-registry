@@ -1,0 +1,27 @@
+{
+  "id": "brightdata",
+  "type": "mcp",
+  "name": "Bright Data",
+  "description": "Bright Data's official MCP server: web scraping that gets past blocks, plus search and structured data feeds.",
+  "author": "Bright Data",
+  "tags": [
+    "scraping",
+    "data",
+    "web"
+  ],
+  "source": {
+    "repo": "brightdata/brightdata-mcp",
+    "path": "."
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@brightdata/mcp"
+    ],
+    "env": {
+      "API_TOKEN": "${BRIGHTDATA_API_TOKEN}"
+    }
+  }
+}

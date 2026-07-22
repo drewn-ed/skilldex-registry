@@ -1,0 +1,16 @@
+{
+  "id": "crafting-effective-readmes",
+  "type": "skill",
+  "name": "Crafting Effective READMEs",
+  "description": "Write READMEs that convert visitors into users: structure, examples, and badges.",
+  "author": "Softaworks",
+  "tags": [
+    "readme",
+    "documentation",
+    "writing"
+  ],
+  "source": {
+    "repo": "softaworks/agent-toolkit",
+    "path": "skills/crafting-effective-readmes"
+  }
+}

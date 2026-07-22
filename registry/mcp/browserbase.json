@@ -1,0 +1,28 @@
+{
+  "id": "browserbase",
+  "type": "mcp",
+  "name": "Browserbase",
+  "description": "Browserbase's official MCP server: cloud headless browsers for automation at scale.",
+  "author": "Browserbase",
+  "tags": [
+    "browser",
+    "automation",
+    "cloud"
+  ],
+  "source": {
+    "repo": "browserbase/mcp-server-browserbase",
+    "path": "."
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@browserbasehq/mcp"
+    ],
+    "env": {
+      "BROWSERBASE_API_KEY": "${BROWSERBASE_API_KEY}",
+      "BROWSERBASE_PROJECT_ID": "${BROWSERBASE_PROJECT_ID}"
+    }
+  }
+}

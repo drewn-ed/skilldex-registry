@@ -1,0 +1,16 @@
+{
+  "id": "using-git-worktrees",
+  "type": "skill",
+  "name": "Using Git Worktrees",
+  "description": "Work on multiple branches in parallel with git worktrees.",
+  "author": "obra",
+  "tags": [
+    "git",
+    "worktrees",
+    "workflow"
+  ],
+  "source": {
+    "repo": "obra/superpowers",
+    "path": "skills/using-git-worktrees"
+  }
+}

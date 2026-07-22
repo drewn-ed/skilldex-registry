@@ -1,0 +1,16 @@
+{
+  "id": "documentation-and-adrs",
+  "type": "skill",
+  "name": "Documentation & ADRs",
+  "description": "Write docs that last: architecture decision records, READMEs, and API docs.",
+  "author": "Addy Osmani",
+  "tags": [
+    "documentation",
+    "adr",
+    "writing"
+  ],
+  "source": {
+    "repo": "addyosmani/agent-skills",
+    "path": "skills/documentation-and-adrs"
+  }
+}

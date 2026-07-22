@@ -1,0 +1,15 @@
+{
+  "id": "planning-and-task-breakdown",
+  "type": "skill",
+  "name": "Planning & Task Breakdown",
+  "description": "Break large goals into ordered, estimable tasks with clear acceptance criteria.",
+  "author": "Addy Osmani",
+  "tags": [
+    "planning",
+    "tasks"
+  ],
+  "source": {
+    "repo": "addyosmani/agent-skills",
+    "path": "skills/planning-and-task-breakdown"
+  }
+}

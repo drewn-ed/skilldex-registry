@@ -1,0 +1,26 @@
+{
+  "id": "elevenlabs",
+  "type": "mcp",
+  "name": "ElevenLabs",
+  "description": "ElevenLabs' official MCP server: text-to-speech and voice generation.",
+  "author": "ElevenLabs",
+  "tags": [
+    "audio",
+    "tts",
+    "voice"
+  ],
+  "source": {
+    "repo": "elevenlabs/elevenlabs-mcp",
+    "path": "."
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "uvx",
+    "args": [
+      "elevenlabs-mcp"
+    ],
+    "env": {
+      "ELEVENLABS_API_KEY": "${ELEVENLABS_API_KEY}"
+    }
+  }
+}

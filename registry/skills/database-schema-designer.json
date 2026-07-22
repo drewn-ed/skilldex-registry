@@ -1,0 +1,16 @@
+{
+  "id": "database-schema-designer",
+  "type": "skill",
+  "name": "Database Schema Designer",
+  "description": "Design normalized, scalable database schemas with sensible indexing.",
+  "author": "Softaworks",
+  "tags": [
+    "database",
+    "schema",
+    "design"
+  ],
+  "source": {
+    "repo": "softaworks/agent-toolkit",
+    "path": "skills/database-schema-designer"
+  }
+}

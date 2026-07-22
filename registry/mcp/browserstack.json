@@ -1,0 +1,28 @@
+{
+  "id": "browserstack",
+  "type": "mcp",
+  "name": "BrowserStack",
+  "description": "BrowserStack's official MCP server: run tests on real devices and browsers.",
+  "author": "BrowserStack",
+  "tags": [
+    "testing",
+    "browsers",
+    "devices"
+  ],
+  "source": {
+    "repo": "browserstack/mcp-server",
+    "path": "."
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@browserstack/mcp-server"
+    ],
+    "env": {
+      "BROWSERSTACK_USERNAME": "${BROWSERSTACK_USERNAME}",
+      "BROWSERSTACK_ACCESS_KEY": "${BROWSERSTACK_ACCESS_KEY}"
+    }
+  }
+}

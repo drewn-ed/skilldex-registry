@@ -3,27 +3,47 @@
     "0xfurai/claude-code-subagents": {
       "license": "MIT",
       "pushed_at": "2025-10-15",
-      "stars": 961
+      "stars": 962
+    },
+    "21st-dev/magic-mcp": {
+      "license": null,
+      "pushed_at": "2026-02-17",
+      "stars": 5487
     },
     "ChromeDevTools/chrome-devtools-mcp": {
       "license": "Apache-2.0",
       "pushed_at": "2026-07-21",
-      "stars": 47372
+      "stars": 47391
+    },
+    "CircleCI-Public/mcp-server-circleci": {
+      "license": "NOASSERTION",
+      "pushed_at": "2026-07-19",
+      "stars": 86
+    },
+    "ClickHouse/mcp-clickhouse": {
+      "license": "Apache-2.0",
+      "pushed_at": "2026-07-17",
+      "stars": 830
     },
     "ConardLi/garden-skills": {
       "license": "MIT",
       "pushed_at": "2026-07-12",
-      "stars": 9711
+      "stars": 9713
     },
     "Flux159/mcp-server-kubernetes": {
       "license": "MIT",
       "pushed_at": "2026-07-22",
       "stars": 1462
     },
+    "GLips/Figma-Context-MCP": {
+      "license": "MIT",
+      "pushed_at": "2026-07-03",
+      "stars": 15464
+    },
     "Leonxlnx/taste-skill": {
       "license": "MIT",
       "pushed_at": "2026-07-22",
-      "stars": 66181
+      "stars": 66228
     },
     "MarkusPfundstein/mcp-obsidian": {
       "license": "MIT",
@@ -33,22 +53,62 @@
     "VoltAgent/awesome-claude-code-subagents": {
       "license": "MIT",
       "pushed_at": "2026-07-10",
-      "stars": 23585
+      "stars": 23588
     },
     "addyosmani/agent-skills": {
       "license": "MIT",
       "pushed_at": "2026-07-22",
-      "stars": 79747
+      "stars": 79777
     },
     "anthropics/skills": {
       "license": null,
       "pushed_at": "2026-07-17",
-      "stars": 163299
+      "stars": 163330
+    },
+    "antvis/mcp-server-chart": {
+      "license": "MIT",
+      "pushed_at": "2026-05-06",
+      "stars": 4252
+    },
+    "apify/actors-mcp-server": {
+      "license": "MIT",
+      "pushed_at": "2026-07-22",
+      "stars": 2144
     },
     "awslabs/mcp": {
       "license": "Apache-2.0",
       "pushed_at": "2026-07-22",
       "stars": 9486
+    },
+    "brave/brave-search-mcp-server": {
+      "license": "MIT",
+      "pushed_at": "2026-07-21",
+      "stars": 1317
+    },
+    "brightdata/brightdata-mcp": {
+      "license": "MIT",
+      "pushed_at": "2026-06-21",
+      "stars": 2529
+    },
+    "browserbase/mcp-server-browserbase": {
+      "license": "Apache-2.0",
+      "pushed_at": "2026-07-20",
+      "stars": 3407
+    },
+    "browserstack/mcp-server": {
+      "license": "AGPL-3.0",
+      "pushed_at": "2026-07-22",
+      "stars": 146
+    },
+    "chroma-core/chroma-mcp": {
+      "license": "Apache-2.0",
+      "pushed_at": "2025-09-17",
+      "stars": 576
+    },
+    "cloudflare/mcp-server-cloudflare": {
+      "license": "Apache-2.0",
+      "pushed_at": "2026-07-21",
+      "stars": 3977
     },
     "contains-studio/agents": {
       "license": null,
@@ -60,10 +120,25 @@
       "pushed_at": "2026-01-22",
       "stars": 3095
     },
+    "dbt-labs/dbt-mcp": {
+      "license": "Apache-2.0",
+      "pushed_at": "2026-07-20",
+      "stars": 594
+    },
+    "e2b-dev/mcp-server": {
+      "license": "Apache-2.0",
+      "pushed_at": "2026-04-16",
+      "stars": 395
+    },
     "elastic/mcp-server-elasticsearch": {
       "license": "Apache-2.0",
       "pushed_at": "2026-07-21",
       "stars": 697
+    },
+    "elevenlabs/elevenlabs-mcp": {
+      "license": "MIT",
+      "pushed_at": "2026-07-06",
+      "stars": 1482
     },
     "exa-labs/exa-mcp-server": {
       "license": "MIT",
@@ -73,7 +148,7 @@
     "firecrawl/firecrawl-mcp-server": {
       "license": "MIT",
       "pushed_at": "2026-07-21",
-      "stars": 7016
+      "stars": 7018
     },
     "getsentry/sentry-mcp": {
       "license": "NOASSERTION",
@@ -83,7 +158,7 @@
     "github/github-mcp-server": {
       "license": "MIT",
       "pushed_at": "2026-07-21",
-      "stars": 31620
+      "stars": 31623
     },
     "iannuttall/claude-agents": {
       "license": "MIT",
@@ -93,27 +168,32 @@
     "lst97/claude-code-sub-agents": {
       "license": "MIT",
       "pushed_at": "2025-08-15",
-      "stars": 1622
+      "stars": 1623
     },
     "makenotion/notion-mcp-server": {
       "license": "MIT",
       "pushed_at": "2026-06-22",
-      "stars": 4543
+      "stars": 4544
+    },
+    "microsoft/azure-devops-mcp": {
+      "license": "MIT",
+      "pushed_at": "2026-07-21",
+      "stars": 1903
     },
     "microsoft/mcp": {
       "license": "MIT",
       "pushed_at": "2026-07-22",
-      "stars": 3495
+      "stars": 3496
     },
     "microsoft/playwright-mcp": {
       "license": "Apache-2.0",
       "pushed_at": "2026-07-15",
-      "stars": 35381
+      "stars": 35392
     },
     "modelcontextprotocol/servers": {
       "license": "NOASSERTION",
       "pushed_at": "2026-07-10",
-      "stars": 88757
+      "stars": 88771
     },
     "mongodb-js/mongodb-mcp-server": {
       "license": "Apache-2.0",
@@ -133,17 +213,22 @@
     "obra/superpowers": {
       "license": "MIT",
       "pushed_at": "2026-07-21",
-      "stars": 259057
+      "stars": 259155
     },
     "oraios/serena": {
       "license": "MIT",
       "pushed_at": "2026-07-21",
-      "stars": 26690
+      "stars": 26701
     },
     "samber/cc-skills-golang": {
       "license": "MIT",
       "pushed_at": "2026-07-19",
-      "stars": 2689
+      "stars": 2690
+    },
+    "softaworks/agent-toolkit": {
+      "license": "MIT",
+      "pushed_at": "2026-03-05",
+      "stars": 2224
     },
     "stripe/ai": {
       "license": "MIT",
@@ -160,15 +245,20 @@
       "pushed_at": "2026-07-21",
       "stars": 2240
     },
+    "twilio-labs/mcp": {
+      "license": "MIT",
+      "pushed_at": "2026-02-14",
+      "stars": 108
+    },
     "upstash/context7": {
       "license": "MIT",
-      "pushed_at": "2026-07-21",
-      "stars": 59571
+      "pushed_at": "2026-07-22",
+      "stars": 59579
     },
     "wshobson/agents": {
       "license": "MIT",
       "pushed_at": "2026-07-20",
-      "stars": 38134
+      "stars": 38137
     }
   }
 }

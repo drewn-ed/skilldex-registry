@@ -1,0 +1,27 @@
+{
+  "id": "apify",
+  "type": "mcp",
+  "name": "Apify Actors",
+  "description": "Apify's official MCP server: run 3000+ pre-built web scraping and automation actors.",
+  "author": "Apify",
+  "tags": [
+    "scraping",
+    "automation",
+    "data"
+  ],
+  "source": {
+    "repo": "apify/actors-mcp-server",
+    "path": "."
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@apify/actors-mcp-server"
+    ],
+    "env": {
+      "APIFY_TOKEN": "${APIFY_TOKEN}"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "azure-devops",
+  "type": "mcp",
+  "name": "Azure DevOps",
+  "description": "Microsoft's official Azure DevOps MCP server: work items, repos, builds, and boards.",
+  "author": "Microsoft",
+  "tags": [
+    "azure",
+    "devops",
+    "microsoft"
+  ],
+  "source": {
+    "repo": "microsoft/azure-devops-mcp",
+    "path": "."
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@azure-devops/mcp",
+      "${ADO_ORG}"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "spec-driven-development",
+  "type": "skill",
+  "name": "Spec-Driven Development",
+  "description": "Write the spec first, then implement against it: tighter scope, fewer surprises.",
+  "author": "Addy Osmani",
+  "tags": [
+    "specs",
+    "workflow",
+    "process"
+  ],
+  "source": {
+    "repo": "addyosmani/agent-skills",
+    "path": "skills/spec-driven-development"
+  }
+}

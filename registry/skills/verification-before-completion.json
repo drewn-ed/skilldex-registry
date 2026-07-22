@@ -1,0 +1,16 @@
+{
+  "id": "verification-before-completion",
+  "type": "skill",
+  "name": "Verification Before Completion",
+  "description": "Never claim done without proof: verify behavior before reporting completion.",
+  "author": "obra",
+  "tags": [
+    "verification",
+    "quality",
+    "workflow"
+  ],
+  "source": {
+    "repo": "obra/superpowers",
+    "path": "skills/verification-before-completion"
+  }
+}

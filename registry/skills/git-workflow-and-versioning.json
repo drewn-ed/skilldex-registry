@@ -1,0 +1,16 @@
+{
+  "id": "git-workflow-and-versioning",
+  "type": "skill",
+  "name": "Git Workflow & Versioning",
+  "description": "Effective git usage: branching strategy, commit hygiene, and semantic versioning.",
+  "author": "Addy Osmani",
+  "tags": [
+    "git",
+    "versioning",
+    "workflow"
+  ],
+  "source": {
+    "repo": "addyosmani/agent-skills",
+    "path": "skills/git-workflow-and-versioning"
+  }
+}
