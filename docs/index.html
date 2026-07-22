@@ -97,6 +97,19 @@
   .pill:active { transform: scale(.95); }
   .pill.active { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
   #count { color: var(--muted); font-size: .85rem; margin: 0 0 14px; }
+  .scope-banner {
+    display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+    background: var(--accent-soft); border: 1px solid var(--accent);
+    border-radius: 12px; padding: 12px 16px; margin: 0 0 18px;
+    font-size: .92rem;
+  }
+  .sb-item { display: inline-flex; align-items: center; gap: 7px; flex-wrap: wrap; }
+  .sb-divider { width: 1px; align-self: stretch; background: var(--accent); opacity: .4; }
+  .sb-pill {
+    border: 1px solid var(--accent); color: var(--accent); border-radius: 999px;
+    padding: 1px 10px; font-size: .78rem; font-weight: 600; white-space: nowrap;
+  }
+  @media (max-width: 640px) { .sb-divider { display: none; } }
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 14px; }
   .card {
     background: var(--surface); border: 1px solid var(--border);
@@ -187,9 +200,6 @@
       </div>
       <span class="qs-note">needs <a href="https://docs.astral.sh/uv/getting-started/installation/">uv</a>
       (<code>brew install uv</code>) — or use <code>pip install skilldex</code></span>
-      <span class="qs-note">skills &amp; agents install once and work everywhere.
-      MCP servers are per-project by default — use the <strong>install for</strong> toggle on their
-      cards (or add <code>--global</code>) to enable one in every session.</span>
     </div>
   </header>
 
@@ -199,6 +209,15 @@
     <button class="pill" data-type="skill">Skills</button>
     <button class="pill" data-type="agent">Subagents</button>
     <button class="pill" data-type="mcp">MCP</button>
+  </div>
+
+  <div class="scope-banner">
+    <span class="sb-item"><span class="badge skill">skill</span><span class="badge agent">agent</span>
+      install once → work in <strong>every project</strong></span>
+    <span class="sb-divider"></span>
+    <span class="sb-item"><span class="badge mcp">mcp</span>
+      installs into <strong>this project only</strong> — flip its card to
+      <span class="sb-pill">every session</span> to make it global</span>
   </div>
 
   <p id="count"></p>
