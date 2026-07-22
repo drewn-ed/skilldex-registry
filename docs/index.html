@@ -105,7 +105,8 @@
   }
   .sb-item { display: inline-flex; align-items: baseline; gap: 7px; flex-wrap: wrap; }
   .sb-pill {
-    border: 1px solid var(--accent); color: var(--accent); border-radius: 999px;
+    border: 1px solid var(--mcp); color: var(--mcp); background: var(--mcp-bg);
+    border-radius: 999px;
     padding: 1px 10px; font-size: .78rem; font-weight: 600; white-space: nowrap;
   }
   .sb-item code { background: var(--code-bg); border-radius: 5px; padding: 1px 6px;
@@ -161,8 +162,8 @@
     font-size: .7rem; padding: 2px 9px; border-radius: 999px; cursor: pointer;
     transition: background .15s ease, color .15s ease, border-color .15s ease;
   }
-  .scope-btn:hover { border-color: var(--accent); color: var(--accent); }
-  .scope-btn.active { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+  .scope-btn:hover { border-color: var(--mcp); color: var(--mcp); }
+  .scope-btn.active { background: var(--mcp-bg); border-color: var(--mcp); color: var(--mcp); }
   .install code { overflow-x: auto; white-space: nowrap; flex: 1; scrollbar-width: none; }
   button.copy {
     border: none; background: none; cursor: pointer; color: var(--muted);
