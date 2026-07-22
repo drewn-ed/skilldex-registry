@@ -1,14 +1,14 @@
 # skilldex-registry
 
-[![Validate](https://github.com/drewn-ed/skilldex-registry/actions/workflows/validate.yml/badge.svg)](https://github.com/drewn-ed/skilldex-registry/actions/workflows/validate.yml)
+[![Validate](https://github.com/skilldex-hub/skilldex-hub.github.io/actions/workflows/validate.yml/badge.svg)](https://github.com/skilldex-hub/skilldex-hub.github.io/actions/workflows/validate.yml)
 
 **A community registry of Claude Code skills, subagents, and MCP servers.**
 
-**Browse it: [drewn-ed.github.io/skilldex-registry](https://drewn-ed.github.io/skilldex-registry/)**
+**Browse it: [skilldex-hub.github.io](https://skilldex-hub.github.io/)**
 
 Every entry is a small JSON file, validated by CI, and served as a single
 machine-readable [`index.json`](index.json) consumed by the
-[`skilldex`](https://github.com/drewn-ed/skilldex) CLI:
+[`skilldex`](https://github.com/skilldex-hub/skilldex) CLI:
 
 ```bash
 uvx skilldex search pdf
