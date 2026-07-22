@@ -1,0 +1,17 @@
+{
+  "id": "taste-skill",
+  "type": "skill",
+  "name": "Taste Skill",
+  "description": "Gives your AI good design taste \u2014 stops generic, boring generated UIs in favor of distinctive work.",
+  "source": {
+    "repo": "Leonxlnx/taste-skill",
+    "path": "skills/taste-skill"
+  },
+  "author": "Leonxlnx",
+  "tags": [
+    "design",
+    "ui",
+    "taste",
+    "frontend"
+  ]
+}

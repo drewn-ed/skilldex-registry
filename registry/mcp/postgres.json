@@ -1,0 +1,27 @@
+{
+  "id": "postgres",
+  "type": "mcp",
+  "name": "Postgres",
+  "description": "Postgres MCP Pro: safe SQL access, index tuning, explain plans, and database health checks.",
+  "source": {
+    "repo": "crystaldba/postgres-mcp",
+    "path": "."
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "uvx",
+    "args": [
+      "postgres-mcp",
+      "--access-mode=restricted"
+    ],
+    "env": {
+      "DATABASE_URI": "${DATABASE_URI}"
+    }
+  },
+  "author": "Crystal DBA",
+  "tags": [
+    "database",
+    "postgres",
+    "sql"
+  ]
+}

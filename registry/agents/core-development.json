@@ -1,0 +1,17 @@
+{
+  "id": "core-development",
+  "type": "agent",
+  "name": "Core Development Agents",
+  "description": "VoltAgent's core dev subagents: frontend, backend, fullstack, API designer, GraphQL and microservices architects.",
+  "source": {
+    "repo": "VoltAgent/awesome-claude-code-subagents",
+    "path": "categories/01-core-development"
+  },
+  "author": "VoltAgent",
+  "tags": [
+    "development",
+    "frontend",
+    "backend",
+    "fullstack"
+  ]
+}

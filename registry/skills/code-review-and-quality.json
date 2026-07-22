@@ -1,0 +1,16 @@
+{
+  "id": "code-review-and-quality",
+  "type": "skill",
+  "name": "Code Review & Quality",
+  "description": "Production-grade code review skill: correctness, readability, maintainability, and review etiquette.",
+  "source": {
+    "repo": "addyosmani/agent-skills",
+    "path": "skills/code-review-and-quality"
+  },
+  "author": "Addy Osmani",
+  "tags": [
+    "code-review",
+    "quality",
+    "engineering"
+  ]
+}

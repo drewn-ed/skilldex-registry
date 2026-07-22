@@ -1,0 +1,16 @@
+{
+  "id": "api-and-interface-design",
+  "type": "skill",
+  "name": "API & Interface Design",
+  "description": "Design clean, evolvable APIs and interfaces: contracts, naming, versioning, and ergonomics.",
+  "source": {
+    "repo": "addyosmani/agent-skills",
+    "path": "skills/api-and-interface-design"
+  },
+  "author": "Addy Osmani",
+  "tags": [
+    "api",
+    "design",
+    "architecture"
+  ]
+}

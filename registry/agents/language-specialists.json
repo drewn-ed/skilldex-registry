@@ -1,0 +1,18 @@
+{
+  "id": "language-specialists",
+  "type": "agent",
+  "name": "Language Specialist Agents",
+  "description": "VoltAgent's language specialists: expert subagents for Python, TypeScript, Go, Rust, Java, and more.",
+  "source": {
+    "repo": "VoltAgent/awesome-claude-code-subagents",
+    "path": "categories/02-language-specialists"
+  },
+  "author": "VoltAgent",
+  "tags": [
+    "languages",
+    "python",
+    "typescript",
+    "rust",
+    "go"
+  ]
+}

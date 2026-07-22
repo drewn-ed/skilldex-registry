@@ -1,0 +1,16 @@
+{
+  "id": "web-design-engineer",
+  "type": "skill",
+  "name": "Web Design Engineer",
+  "description": "Design-engineering skill for building beautiful, well-structured web pages.",
+  "source": {
+    "repo": "ConardLi/garden-skills",
+    "path": "skills/web-design-engineer"
+  },
+  "author": "ConardLi",
+  "tags": [
+    "web",
+    "design",
+    "frontend"
+  ]
+}

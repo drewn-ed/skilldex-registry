@@ -1,0 +1,16 @@
+{
+  "id": "debugging-and-error-recovery",
+  "type": "skill",
+  "name": "Debugging & Error Recovery",
+  "description": "Systematic debugging methodology: hypothesis-driven diagnosis, minimal repros, and safe recovery.",
+  "source": {
+    "repo": "addyosmani/agent-skills",
+    "path": "skills/debugging-and-error-recovery"
+  },
+  "author": "Addy Osmani",
+  "tags": [
+    "debugging",
+    "errors",
+    "engineering"
+  ]
+}

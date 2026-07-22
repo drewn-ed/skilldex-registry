@@ -3,12 +3,37 @@
     "ChromeDevTools/chrome-devtools-mcp": {
       "license": "Apache-2.0",
       "pushed_at": "2026-07-21",
-      "stars": 47370
+      "stars": 47372
+    },
+    "ConardLi/garden-skills": {
+      "license": "MIT",
+      "pushed_at": "2026-07-12",
+      "stars": 9711
+    },
+    "Leonxlnx/taste-skill": {
+      "license": "MIT",
+      "pushed_at": "2026-07-22",
+      "stars": 66174
+    },
+    "VoltAgent/awesome-claude-code-subagents": {
+      "license": "MIT",
+      "pushed_at": "2026-07-10",
+      "stars": 23583
+    },
+    "addyosmani/agent-skills": {
+      "license": "MIT",
+      "pushed_at": "2026-07-22",
+      "stars": 79745
     },
     "anthropics/skills": {
       "license": null,
       "pushed_at": "2026-07-17",
-      "stars": 163289
+      "stars": 163296
+    },
+    "crystaldba/postgres-mcp": {
+      "license": "MIT",
+      "pushed_at": "2026-01-22",
+      "stars": 3095
     },
     "firecrawl/firecrawl-mcp-server": {
       "license": "MIT",
@@ -23,7 +48,7 @@
     "github/github-mcp-server": {
       "license": "MIT",
       "pushed_at": "2026-07-21",
-      "stars": 31619
+      "stars": 31620
     },
     "makenotion/notion-mcp-server": {
       "license": "MIT",
@@ -63,7 +88,7 @@
     "wshobson/agents": {
       "license": "MIT",
       "pushed_at": "2026-07-20",
-      "stars": 38129
+      "stars": 38133
     }
   }
 }

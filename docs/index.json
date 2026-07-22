@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "count": 44,
+  "count": 54,
   "entries": [
     {
       "id": "accessibility-compliance",
@@ -85,6 +85,23 @@
       ]
     },
     {
+      "id": "core-development",
+      "type": "agent",
+      "name": "Core Development Agents",
+      "description": "VoltAgent's core dev subagents: frontend, backend, fullstack, API designer, GraphQL and microservices architects.",
+      "source": {
+        "repo": "VoltAgent/awesome-claude-code-subagents",
+        "path": "categories/01-core-development"
+      },
+      "author": "VoltAgent",
+      "tags": [
+        "development",
+        "frontend",
+        "backend",
+        "fullstack"
+      ]
+    },
+    {
       "id": "debugging-toolkit",
       "type": "agent",
       "name": "Debugging Toolkit",
@@ -114,6 +131,24 @@
         "kubernetes",
         "devops",
         "infrastructure"
+      ]
+    },
+    {
+      "id": "language-specialists",
+      "type": "agent",
+      "name": "Language Specialist Agents",
+      "description": "VoltAgent's language specialists: expert subagents for Python, TypeScript, Go, Rust, Java, and more.",
+      "source": {
+        "repo": "VoltAgent/awesome-claude-code-subagents",
+        "path": "categories/02-language-specialists"
+      },
+      "author": "VoltAgent",
+      "tags": [
+        "languages",
+        "python",
+        "typescript",
+        "rust",
+        "go"
       ]
     },
     {
@@ -347,6 +382,22 @@
       ]
     },
     {
+      "id": "linear",
+      "type": "mcp",
+      "name": "Linear",
+      "description": "Linear's official remote MCP server: issues, projects, and team workflows.",
+      "mcp": {
+        "type": "http",
+        "url": "https://mcp.linear.app/mcp"
+      },
+      "author": "Linear",
+      "tags": [
+        "issues",
+        "project-management",
+        "productivity"
+      ]
+    },
+    {
       "id": "memory",
       "type": "mcp",
       "name": "Memory",
@@ -421,6 +472,33 @@
         "automation",
         "testing",
         "web"
+      ]
+    },
+    {
+      "id": "postgres",
+      "type": "mcp",
+      "name": "Postgres",
+      "description": "Postgres MCP Pro: safe SQL access, index tuning, explain plans, and database health checks.",
+      "source": {
+        "repo": "crystaldba/postgres-mcp",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "uvx",
+        "args": [
+          "postgres-mcp",
+          "--access-mode=restricted"
+        ],
+        "env": {
+          "DATABASE_URI": "${DATABASE_URI}"
+        }
+      },
+      "author": "Crystal DBA",
+      "tags": [
+        "database",
+        "postgres",
+        "sql"
       ]
     },
     {
@@ -587,6 +665,22 @@
       ]
     },
     {
+      "id": "api-and-interface-design",
+      "type": "skill",
+      "name": "API & Interface Design",
+      "description": "Design clean, evolvable APIs and interfaces: contracts, naming, versioning, and ergonomics.",
+      "source": {
+        "repo": "addyosmani/agent-skills",
+        "path": "skills/api-and-interface-design"
+      },
+      "author": "Addy Osmani",
+      "tags": [
+        "api",
+        "design",
+        "architecture"
+      ]
+    },
+    {
       "id": "brand-guidelines",
       "type": "skill",
       "name": "Brand Guidelines",
@@ -631,6 +725,54 @@
         "api",
         "anthropic",
         "development"
+      ]
+    },
+    {
+      "id": "code-review-and-quality",
+      "type": "skill",
+      "name": "Code Review & Quality",
+      "description": "Production-grade code review skill: correctness, readability, maintainability, and review etiquette.",
+      "source": {
+        "repo": "addyosmani/agent-skills",
+        "path": "skills/code-review-and-quality"
+      },
+      "author": "Addy Osmani",
+      "tags": [
+        "code-review",
+        "quality",
+        "engineering"
+      ]
+    },
+    {
+      "id": "context-engineering",
+      "type": "skill",
+      "name": "Context Engineering",
+      "description": "Techniques for feeding AI agents the right context: structuring repos, docs, and prompts for better results.",
+      "source": {
+        "repo": "addyosmani/agent-skills",
+        "path": "skills/context-engineering"
+      },
+      "author": "Addy Osmani",
+      "tags": [
+        "context",
+        "ai",
+        "prompts"
+      ]
+    },
+    {
+      "id": "debugging-and-error-recovery",
+      "type": "skill",
+      "name": "Debugging & Error Recovery",
+      "description": "Systematic debugging methodology: hypothesis-driven diagnosis, minimal repros, and safe recovery.",
+      "source": {
+        "repo": "addyosmani/agent-skills",
+        "path": "skills/debugging-and-error-recovery"
+      },
+      "author": "Addy Osmani",
+      "tags": [
+        "debugging",
+        "errors",
+        "engineering"
       ]
     },
     {
@@ -779,6 +921,23 @@
       ]
     },
     {
+      "id": "taste-skill",
+      "type": "skill",
+      "name": "Taste Skill",
+      "description": "Gives your AI good design taste \u2014 stops generic, boring generated UIs in favor of distinctive work.",
+      "source": {
+        "repo": "Leonxlnx/taste-skill",
+        "path": "skills/taste-skill"
+      },
+      "author": "Leonxlnx",
+      "tags": [
+        "design",
+        "ui",
+        "taste",
+        "frontend"
+      ]
+    },
+    {
       "id": "theme-factory",
       "type": "skill",
       "name": "Theme Factory",
@@ -808,6 +967,22 @@
         "web",
         "html",
         "artifacts"
+      ]
+    },
+    {
+      "id": "web-design-engineer",
+      "type": "skill",
+      "name": "Web Design Engineer",
+      "description": "Design-engineering skill for building beautiful, well-structured web pages.",
+      "source": {
+        "repo": "ConardLi/garden-skills",
+        "path": "skills/web-design-engineer"
+      },
+      "author": "ConardLi",
+      "tags": [
+        "web",
+        "design",
+        "frontend"
       ]
     },
     {

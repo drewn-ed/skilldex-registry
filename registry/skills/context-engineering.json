@@ -1,0 +1,16 @@
+{
+  "id": "context-engineering",
+  "type": "skill",
+  "name": "Context Engineering",
+  "description": "Techniques for feeding AI agents the right context: structuring repos, docs, and prompts for better results.",
+  "source": {
+    "repo": "addyosmani/agent-skills",
+    "path": "skills/context-engineering"
+  },
+  "author": "Addy Osmani",
+  "tags": [
+    "context",
+    "ai",
+    "prompts"
+  ]
+}

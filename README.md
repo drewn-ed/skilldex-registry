@@ -36,9 +36,13 @@ in an entry — use `${VAR}` placeholders (CI rejects anything that looks like a
 | ID | Description | Source |
 |---|---|---|
 | `algorithmic-art` | Create generative and algorithmic art: patterns, fractals, and procedural visuals. | [anthropics/skills](https://github.com/anthropics/skills) |
+| `api-and-interface-design` | Design clean, evolvable APIs and interfaces: contracts, naming, versioning, and ergonomics. | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) |
 | `brand-guidelines` | Apply consistent brand identity — colors, typography, tone — across generated content. | [anthropics/skills](https://github.com/anthropics/skills) |
 | `canvas-design` | Design visual layouts, posters, and graphics on an HTML canvas. | [anthropics/skills](https://github.com/anthropics/skills) |
 | `claude-api` | Reference for building with the Claude API: models, pricing, streaming, tool use, and caching. | [anthropics/skills](https://github.com/anthropics/skills) |
+| `code-review-and-quality` | Production-grade code review skill: correctness, readability, maintainability, and review etiquette. | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) |
+| `context-engineering` | Techniques for feeding AI agents the right context: structuring repos, docs, and prompts for better results. | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) |
+| `debugging-and-error-recovery` | Systematic debugging methodology: hypothesis-driven diagnosis, minimal repros, and safe recovery. | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) |
 | `doc-coauthoring` | Structured collaborative document writing: outlines, drafts, and revision workflows. | [anthropics/skills](https://github.com/anthropics/skills) |
 | `docx` | Create and edit Microsoft Word .docx files: formatting, styles, tracked changes, and templates. | [anthropics/skills](https://github.com/anthropics/skills) |
 | `frontend-design` | Guides Claude toward distinctive, production-quality frontend interfaces instead of generic AI-styled pages. | [anthropics/skills](https://github.com/anthropics/skills) |
@@ -48,8 +52,10 @@ in an entry — use `${VAR}` placeholders (CI rejects anything that looks like a
 | `pptx` | Create and edit PowerPoint .pptx presentations: slides, layouts, themes, and speaker notes. | [anthropics/skills](https://github.com/anthropics/skills) |
 | `skill-creator` | Guides Claude through authoring new skills: structure, frontmatter, progressive disclosure, and packaging. | [anthropics/skills](https://github.com/anthropics/skills) |
 | `slack-gif-creator` | Create animated GIFs sized and optimized for Slack. | [anthropics/skills](https://github.com/anthropics/skills) |
+| `taste-skill` | Gives your AI good design taste — stops generic, boring generated UIs in favor of distinctive work. | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) |
 | `theme-factory` | Generate cohesive visual themes: palettes, typography pairings, and style tokens. | [anthropics/skills](https://github.com/anthropics/skills) |
 | `web-artifacts-builder` | Build polished single-page web artifacts with solid layout, styling, and interactivity. | [anthropics/skills](https://github.com/anthropics/skills) |
+| `web-design-engineer` | Design-engineering skill for building beautiful, well-structured web pages. | [ConardLi/garden-skills](https://github.com/ConardLi/garden-skills) |
 | `webapp-testing` | Test local web applications with Playwright: navigate, interact, screenshot, and verify behavior. | [anthropics/skills](https://github.com/anthropics/skills) |
 | `xlsx` | Create and edit Excel .xlsx spreadsheets: formulas, charts, pivot tables, and data analysis. | [anthropics/skills](https://github.com/anthropics/skills) |
 
@@ -62,8 +68,10 @@ in an entry — use `${VAR}` placeholders (CI rejects anything that looks like a
 | `api-scaffolding` | Subagents for designing and scaffolding REST and GraphQL APIs. | [wshobson/agents](https://github.com/wshobson/agents) |
 | `application-performance` | Subagents for profiling, load testing, and performance optimization. | [wshobson/agents](https://github.com/wshobson/agents) |
 | `backend-development` | Subagents for backend work: architecture, GraphQL, event sourcing, and performance engineering. | [wshobson/agents](https://github.com/wshobson/agents) |
+| `core-development` | VoltAgent's core dev subagents: frontend, backend, fullstack, API designer, GraphQL and microservices architects. | [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents) |
 | `debugging-toolkit` | Subagents for systematic debugging: error diagnosis, root-cause analysis, and fix verification. | [wshobson/agents](https://github.com/wshobson/agents) |
 | `kubernetes-operations` | Subagents for K8s work: manifests, helm, cluster operations, and troubleshooting. | [wshobson/agents](https://github.com/wshobson/agents) |
+| `language-specialists` | VoltAgent's language specialists: expert subagents for Python, TypeScript, Go, Rust, Java, and more. | [VoltAgent/awesome-claude-code-subagents](https://github.com/VoltAgent/awesome-claude-code-subagents) |
 | `llm-application-dev` | Subagents for building LLM-powered applications: prompts, RAG, evals, and agent design. | [wshobson/agents](https://github.com/wshobson/agents) |
 | `python-development` | Subagents for expert Python work: idiomatic code, typing, packaging, and performance. | [wshobson/agents](https://github.com/wshobson/agents) |
 | `security-scanning` | Subagents for security audits: vulnerability scanning, dependency checks, and hardening. | [wshobson/agents](https://github.com/wshobson/agents) |
@@ -80,9 +88,11 @@ in an entry — use `${VAR}` placeholders (CI rejects anything that looks like a
 | `firecrawl` | Web scraping and crawling MCP server: extract clean content from any site, with search and batch crawls. | [firecrawl/firecrawl-mcp-server](https://github.com/firecrawl/firecrawl-mcp-server) |
 | `git` | Reference MCP server for reading, searching, and manipulating local Git repositories. | [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) |
 | `github` | GitHub's official remote MCP server: repos, issues, pull requests, and code search. | [github/github-mcp-server](https://github.com/github/github-mcp-server) |
+| `linear` | Linear's official remote MCP server: issues, projects, and team workflows. |  |
 | `memory` | Reference MCP server providing a knowledge-graph-based persistent memory across sessions. | [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) |
 | `notion` | Notion's official MCP server: search, read, and write pages and databases. | [makenotion/notion-mcp-server](https://github.com/makenotion/notion-mcp-server) |
 | `playwright` | Microsoft's official MCP server for browser automation: navigate, click, fill forms, and capture accessibility snapshots. | [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp) |
+| `postgres` | Postgres MCP Pro: safe SQL access, index tuning, explain plans, and database health checks. | [crystaldba/postgres-mcp](https://github.com/crystaldba/postgres-mcp) |
 | `sentry` | Sentry's official remote MCP server: query issues, errors, and performance data. | [getsentry/sentry-mcp](https://github.com/getsentry/sentry-mcp) |
 | `sequential-thinking` | Reference MCP server for structured, revisable step-by-step reasoning chains. | [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) |
 | `serena` | Coding-agent toolkit MCP server: semantic code retrieval and editing via language servers. | [oraios/serena](https://github.com/oraios/serena) |
