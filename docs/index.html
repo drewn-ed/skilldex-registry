@@ -141,6 +141,15 @@
     background: var(--code-bg); border-radius: 8px; padding: 7px 10px;
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .78rem;
   }
+  .scope { display: flex; gap: 4px; align-items: center; }
+  .scope-label { font-size: .7rem; color: var(--muted); margin-right: 2px; }
+  .scope-btn {
+    border: 1px solid var(--border); background: none; color: var(--muted);
+    font-size: .7rem; padding: 2px 9px; border-radius: 999px; cursor: pointer;
+    transition: background .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .scope-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .scope-btn.active { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
   .install code { overflow-x: auto; white-space: nowrap; flex: 1; scrollbar-width: none; }
   button.copy {
     border: none; background: none; cursor: pointer; color: var(--muted);
@@ -248,6 +257,9 @@ function card(e, i) {
     </div>
     <p class="desc">${esc(e.description || "")}</p>
     ${(e.tags || []).length ? `<div class="tags">${e.tags.map((t) => `<span class="tag">${esc(t)}</span>`).join("")}</div>` : ""}
+    ${e.type === "mcp" ? `<div class="scope"><span class="scope-label">install for:</span>
+      <button class="scope-btn active" data-id="${esc(e.id)}" data-flag="">this project</button>
+      <button class="scope-btn" data-id="${esc(e.id)}" data-flag=" --global">every session</button></div>` : ""}
     <div class="install"><code>${esc(cmd)}</code><button class="copy" data-copy="${esc(cmd)}">copy</button></div>
     <div class="meta">
       <span>${e.author ? "by " + esc(e.author) : ""}</span>
@@ -299,6 +311,15 @@ document.querySelectorAll(".pill").forEach((pill) =>
     render();
   }));
 document.addEventListener("click", (ev) => {
+  const scopeBtn = ev.target.closest("button.scope-btn");
+  if (scopeBtn) {
+    const card = scopeBtn.closest(".card");
+    card.querySelectorAll(".scope-btn").forEach((b) => b.classList.toggle("active", b === scopeBtn));
+    const cmd = `uvx skilldex install ${scopeBtn.dataset.id}${scopeBtn.dataset.flag}`;
+    card.querySelector(".install code").textContent = cmd;
+    card.querySelector(".install .copy").dataset.copy = cmd;
+    return;
+  }
   const btn = ev.target.closest("button.copy");
   if (!btn) return;
   navigator.clipboard.writeText(btn.dataset.copy).then(() => {
