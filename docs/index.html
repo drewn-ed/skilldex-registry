@@ -315,11 +315,12 @@ function matches(entry, query) {
 }
 
 let firstRender = true;
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 function card(e, i) {
   const repo = e.source && e.source.repo;
   const cmd = `uvx skilldex install ${e.id}`;
   const enter = firstRender ? ` enter" style="--i:${Math.min(i, 12)}` : "";
-  return `<div class="card${enter}">
+  return `<div data-id="${esc(e.id)}" class="card${enter}">
     <div class="card-top">
       <h3>${esc(e.name)}</h3>
       <span class="badge ${e.type}">${TYPE_LABEL[e.type] || e.type}</span>
@@ -358,7 +359,36 @@ function render() {
   if (currentSort === "stars") {
     shown.sort((a, b) => (statsFor(b).stars || 0) - (statsFor(a).stars || 0));
   }
-  $("#grid").innerHTML = shown.map((e, i) => card(e, i)).join("");
+  const grid = $("#grid");
+  const animate = !firstRender && !reduceMotion;
+  const oldRects = new Map();
+  if (animate) {
+    grid.querySelectorAll(".card[data-id]").forEach((el) =>
+      oldRects.set(el.dataset.id, el.getBoundingClientRect()));
+  }
+  grid.innerHTML = shown.map((e, i) => card(e, i)).join("");
+  if (animate) {
+    grid.querySelectorAll(".card[data-id]").forEach((el) => {
+      const prev = oldRects.get(el.dataset.id);
+      if (prev) {
+        // FLIP: card existed — glide from its old position to the new one
+        const next = el.getBoundingClientRect();
+        const dx = prev.left - next.left;
+        const dy = prev.top - next.top;
+        if (dx || dy) {
+          el.animate(
+            [{ transform: `translate(${dx}px, ${dy}px)` }, { transform: "none" }],
+            { duration: 300, easing: "cubic-bezier(.2,.7,.3,1)" }
+          );
+        }
+      } else {
+        el.animate(
+          [{ opacity: 0, transform: "translateY(10px) scale(.98)" }, { opacity: 1, transform: "none" }],
+          { duration: 240, easing: "ease-out" }
+        );
+      }
+    });
+  }
   firstRender = false;
   $("#empty").hidden = shown.length > 0;
   $("#count").textContent = `${shown.length} of ${entries.length} entries`;
