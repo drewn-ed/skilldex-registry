@@ -182,8 +182,10 @@ uvx skilldex list               # see everything installed</pre>
     <summary>What's the difference between installing with and without --project?</summary>
     <p>Skills and agents go to <code>~/.claude/</code> by default — available in every project.
     Add <code>--project</code> to install into <code>./.claude/</code> instead, scoped to the current
-    repo (and shareable with your team via git). MCP servers are always project-scoped: they're
-    written to <code>./.mcp.json</code> in the directory where you run the install.</p>
+    repo (and shareable with your team via git). MCP servers are project-scoped by default —
+    written to <code>./.mcp.json</code> where you run the install — or add <code>--global</code>
+    to register one user-wide so it loads in every session, in every folder. Keep global for the
+    one or two servers you use constantly; each one costs context in every session.</p>
   </details>
 
   <details>
