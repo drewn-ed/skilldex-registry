@@ -1,0 +1,16 @@
+{
+  "id": "studio-marketing",
+  "type": "agent",
+  "name": "Studio Marketing Agents",
+  "description": "Contains Studio's marketing subagents: growth, content, TikTok/Instagram strategy, and app store optimization.",
+  "author": "Contains Studio",
+  "tags": [
+    "marketing",
+    "growth",
+    "content"
+  ],
+  "source": {
+    "repo": "contains-studio/agents",
+    "path": "marketing"
+  }
+}

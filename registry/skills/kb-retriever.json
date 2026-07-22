@@ -1,0 +1,16 @@
+{
+  "id": "kb-retriever",
+  "type": "skill",
+  "name": "Knowledge Base Retriever",
+  "description": "Retrieve and synthesize answers from local knowledge bases and document collections.",
+  "author": "ConardLi",
+  "tags": [
+    "knowledge",
+    "retrieval",
+    "rag"
+  ],
+  "source": {
+    "repo": "ConardLi/garden-skills",
+    "path": "skills/kb-retriever"
+  }
+}

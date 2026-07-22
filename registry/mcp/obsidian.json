@@ -1,0 +1,26 @@
+{
+  "id": "obsidian",
+  "type": "mcp",
+  "name": "Obsidian",
+  "description": "Work with your Obsidian vault: read, search, and edit notes via the Local REST API plugin.",
+  "author": "MarkusPfundstein",
+  "tags": [
+    "notes",
+    "obsidian",
+    "knowledge"
+  ],
+  "source": {
+    "repo": "MarkusPfundstein/mcp-obsidian",
+    "path": "."
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "uvx",
+    "args": [
+      "mcp-obsidian"
+    ],
+    "env": {
+      "OBSIDIAN_API_KEY": "${OBSIDIAN_API_KEY}"
+    }
+  }
+}

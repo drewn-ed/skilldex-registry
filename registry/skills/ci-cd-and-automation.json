@@ -1,0 +1,16 @@
+{
+  "id": "ci-cd-and-automation",
+  "type": "skill",
+  "name": "CI/CD & Automation",
+  "description": "Design reliable CI/CD pipelines: build, test, deploy stages and automation best practices.",
+  "author": "Addy Osmani",
+  "tags": [
+    "cicd",
+    "automation",
+    "devops"
+  ],
+  "source": {
+    "repo": "addyosmani/agent-skills",
+    "path": "skills/ci-cd-and-automation"
+  }
+}

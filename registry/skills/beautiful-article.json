@@ -1,0 +1,16 @@
+{
+  "id": "beautiful-article",
+  "type": "skill",
+  "name": "Beautiful Article",
+  "description": "Turn content into beautifully formatted, publication-ready articles.",
+  "author": "ConardLi",
+  "tags": [
+    "writing",
+    "formatting",
+    "content"
+  ],
+  "source": {
+    "repo": "ConardLi/garden-skills",
+    "path": "skills/beautiful-article"
+  }
+}

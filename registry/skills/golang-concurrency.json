@@ -1,0 +1,15 @@
+{
+  "id": "golang-concurrency",
+  "type": "skill",
+  "name": "Go Concurrency",
+  "description": "Write correct concurrent Go: goroutines, channels, sync primitives, and race avoidance.",
+  "author": "samber",
+  "tags": [
+    "golang",
+    "concurrency"
+  ],
+  "source": {
+    "repo": "samber/cc-skills-golang",
+    "path": "skills/golang-concurrency"
+  }
+}

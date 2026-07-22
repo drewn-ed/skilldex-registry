@@ -1,0 +1,15 @@
+{
+  "id": "test-driven-development",
+  "type": "skill",
+  "name": "Test-Driven Development",
+  "description": "Superpowers TDD skill: strict red-green-refactor discipline for AI-assisted coding.",
+  "author": "obra",
+  "tags": [
+    "testing",
+    "tdd"
+  ],
+  "source": {
+    "repo": "obra/superpowers",
+    "path": "skills/test-driven-development"
+  }
+}

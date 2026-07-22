@@ -1,0 +1,15 @@
+{
+  "id": "writing-plans",
+  "type": "skill",
+  "name": "Writing Plans",
+  "description": "Superpowers planning skill: turn goals into executable, verifiable implementation plans.",
+  "author": "obra",
+  "tags": [
+    "planning",
+    "workflow"
+  ],
+  "source": {
+    "repo": "obra/superpowers",
+    "path": "skills/writing-plans"
+  }
+}

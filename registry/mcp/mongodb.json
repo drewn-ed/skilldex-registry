@@ -1,0 +1,27 @@
+{
+  "id": "mongodb",
+  "type": "mcp",
+  "name": "MongoDB",
+  "description": "MongoDB's official MCP server: query collections, inspect schemas, and manage Atlas.",
+  "author": "MongoDB",
+  "tags": [
+    "database",
+    "mongodb",
+    "nosql"
+  ],
+  "source": {
+    "repo": "mongodb-js/mongodb-mcp-server",
+    "path": "."
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "mongodb-mcp-server"
+    ],
+    "env": {
+      "MDB_MCP_CONNECTION_STRING": "${MDB_MCP_CONNECTION_STRING}"
+    }
+  }
+}

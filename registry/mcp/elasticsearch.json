@@ -1,0 +1,28 @@
+{
+  "id": "elasticsearch",
+  "type": "mcp",
+  "name": "Elasticsearch",
+  "description": "Elastic's official MCP server: query indices and search your Elasticsearch data.",
+  "author": "Elastic",
+  "tags": [
+    "search",
+    "elasticsearch",
+    "data"
+  ],
+  "source": {
+    "repo": "elastic/mcp-server-elasticsearch",
+    "path": "."
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@elastic/mcp-server-elasticsearch"
+    ],
+    "env": {
+      "ES_URL": "${ES_URL}",
+      "ES_API_KEY": "${ES_API_KEY}"
+    }
+  }
+}

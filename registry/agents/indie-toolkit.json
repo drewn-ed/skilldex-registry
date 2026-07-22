@@ -1,0 +1,17 @@
+{
+  "id": "indie-toolkit",
+  "type": "agent",
+  "name": "Indie Dev Toolkit",
+  "description": "Ian Nuttall's practical subagents: PRD writer, task planner, code refactorer, security auditor, content writer, vibe-coding coach.",
+  "author": "iannuttall",
+  "tags": [
+    "indie",
+    "product",
+    "planning",
+    "writing"
+  ],
+  "source": {
+    "repo": "iannuttall/claude-agents",
+    "path": "agents"
+  }
+}

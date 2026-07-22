@@ -1,0 +1,16 @@
+{
+  "id": "frontend-ui-engineering",
+  "type": "skill",
+  "name": "Frontend UI Engineering",
+  "description": "Build robust frontend interfaces: component architecture, state, styling, and performance.",
+  "author": "Addy Osmani",
+  "tags": [
+    "frontend",
+    "ui",
+    "engineering"
+  ],
+  "source": {
+    "repo": "addyosmani/agent-skills",
+    "path": "skills/frontend-ui-engineering"
+  }
+}

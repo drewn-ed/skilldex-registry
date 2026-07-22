@@ -1,0 +1,15 @@
+{
+  "id": "code-simplification",
+  "type": "skill",
+  "name": "Code Simplification",
+  "description": "Simplify and reduce code: remove needless complexity while preserving behavior.",
+  "author": "Addy Osmani",
+  "tags": [
+    "refactoring",
+    "simplicity"
+  ],
+  "source": {
+    "repo": "addyosmani/agent-skills",
+    "path": "skills/code-simplification"
+  }
+}

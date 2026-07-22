@@ -1,0 +1,27 @@
+{
+  "id": "netlify",
+  "type": "mcp",
+  "name": "Netlify",
+  "description": "Netlify's official MCP server: deploy sites, manage projects and environment variables.",
+  "author": "Netlify",
+  "tags": [
+    "deploy",
+    "hosting",
+    "jamstack"
+  ],
+  "source": {
+    "repo": "netlify/netlify-mcp",
+    "path": "."
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "@netlify/mcp"
+    ],
+    "env": {
+      "NETLIFY_PERSONAL_ACCESS_TOKEN": "${NETLIFY_PERSONAL_ACCESS_TOKEN}"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "tech-experts",
+  "type": "agent",
+  "name": "138 Tech Experts",
+  "description": "0xfurai's expert subagents for 138 technologies: React, Rust, Postgres, Kubernetes, Android, and far more.",
+  "author": "0xfurai",
+  "tags": [
+    "languages",
+    "frameworks",
+    "experts"
+  ],
+  "source": {
+    "repo": "0xfurai/claude-code-subagents",
+    "path": "agents"
+  }
+}

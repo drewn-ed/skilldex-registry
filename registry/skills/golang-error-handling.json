@@ -1,0 +1,15 @@
+{
+  "id": "golang-error-handling",
+  "type": "skill",
+  "name": "Go Error Handling",
+  "description": "Idiomatic Go error handling: wrapping, sentinel errors, and errors.Is/As patterns.",
+  "author": "samber",
+  "tags": [
+    "golang",
+    "errors"
+  ],
+  "source": {
+    "repo": "samber/cc-skills-golang",
+    "path": "skills/golang-error-handling"
+  }
+}

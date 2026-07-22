@@ -1,0 +1,16 @@
+{
+  "id": "studio-design",
+  "type": "agent",
+  "name": "Studio Design Agents",
+  "description": "Contains Studio's design subagents: UI, UX research, brand, and visual storytelling.",
+  "author": "Contains Studio",
+  "tags": [
+    "design",
+    "ux",
+    "brand"
+  ],
+  "source": {
+    "repo": "contains-studio/agents",
+    "path": "design"
+  }
+}

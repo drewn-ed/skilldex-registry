@@ -1,0 +1,16 @@
+{
+  "id": "huggingface",
+  "type": "mcp",
+  "name": "Hugging Face",
+  "description": "Hugging Face's official remote MCP server: search models, datasets, Spaces, and papers.",
+  "author": "Hugging Face",
+  "tags": [
+    "ml",
+    "models",
+    "datasets"
+  ],
+  "mcp": {
+    "type": "http",
+    "url": "https://huggingface.co/mcp"
+  }
+}

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "count": 54,
+  "count": 86,
   "entries": [
     {
       "id": "accessibility-compliance",
@@ -118,6 +118,39 @@
       ]
     },
     {
+      "id": "full-stack-team",
+      "type": "agent",
+      "name": "Full-Stack Team",
+      "description": "lst97's coordinated subagent team for full-stack development work.",
+      "author": "lst97",
+      "tags": [
+        "fullstack",
+        "team",
+        "development"
+      ],
+      "source": {
+        "repo": "lst97/claude-code-sub-agents",
+        "path": "agents"
+      }
+    },
+    {
+      "id": "indie-toolkit",
+      "type": "agent",
+      "name": "Indie Dev Toolkit",
+      "description": "Ian Nuttall's practical subagents: PRD writer, task planner, code refactorer, security auditor, content writer, vibe-coding coach.",
+      "author": "iannuttall",
+      "tags": [
+        "indie",
+        "product",
+        "planning",
+        "writing"
+      ],
+      "source": {
+        "repo": "iannuttall/claude-agents",
+        "path": "agents"
+      }
+    },
+    {
       "id": "kubernetes-operations",
       "type": "agent",
       "name": "Kubernetes Operations",
@@ -200,6 +233,70 @@
       ]
     },
     {
+      "id": "studio-design",
+      "type": "agent",
+      "name": "Studio Design Agents",
+      "description": "Contains Studio's design subagents: UI, UX research, brand, and visual storytelling.",
+      "author": "Contains Studio",
+      "tags": [
+        "design",
+        "ux",
+        "brand"
+      ],
+      "source": {
+        "repo": "contains-studio/agents",
+        "path": "design"
+      }
+    },
+    {
+      "id": "studio-engineering",
+      "type": "agent",
+      "name": "Studio Engineering Agents",
+      "description": "Contains Studio's engineering subagents: rapid prototyping, backend, frontend, mobile, and AI engineers.",
+      "author": "Contains Studio",
+      "tags": [
+        "engineering",
+        "prototyping",
+        "startup"
+      ],
+      "source": {
+        "repo": "contains-studio/agents",
+        "path": "engineering"
+      }
+    },
+    {
+      "id": "studio-marketing",
+      "type": "agent",
+      "name": "Studio Marketing Agents",
+      "description": "Contains Studio's marketing subagents: growth, content, TikTok/Instagram strategy, and app store optimization.",
+      "author": "Contains Studio",
+      "tags": [
+        "marketing",
+        "growth",
+        "content"
+      ],
+      "source": {
+        "repo": "contains-studio/agents",
+        "path": "marketing"
+      }
+    },
+    {
+      "id": "studio-product",
+      "type": "agent",
+      "name": "Studio Product Agents",
+      "description": "Contains Studio's product subagents: feedback synthesis, prioritization, and sprint planning.",
+      "author": "Contains Studio",
+      "tags": [
+        "product",
+        "planning",
+        "feedback"
+      ],
+      "source": {
+        "repo": "contains-studio/agents",
+        "path": "product"
+      }
+    },
+    {
       "id": "tdd-workflows",
       "type": "agent",
       "name": "TDD Workflows",
@@ -214,6 +311,71 @@
         "tdd",
         "workflows"
       ]
+    },
+    {
+      "id": "tech-experts",
+      "type": "agent",
+      "name": "138 Tech Experts",
+      "description": "0xfurai's expert subagents for 138 technologies: React, Rust, Postgres, Kubernetes, Android, and far more.",
+      "author": "0xfurai",
+      "tags": [
+        "languages",
+        "frameworks",
+        "experts"
+      ],
+      "source": {
+        "repo": "0xfurai/claude-code-subagents",
+        "path": "agents"
+      }
+    },
+    {
+      "id": "aws-docs",
+      "type": "mcp",
+      "name": "AWS Documentation",
+      "description": "AWS Labs' official documentation MCP server: search and read AWS docs.",
+      "author": "AWS Labs",
+      "tags": [
+        "aws",
+        "documentation",
+        "cloud"
+      ],
+      "source": {
+        "repo": "awslabs/mcp",
+        "path": "src/aws-documentation-mcp-server"
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "uvx",
+        "args": [
+          "awslabs.aws-documentation-mcp-server@latest"
+        ]
+      }
+    },
+    {
+      "id": "azure",
+      "type": "mcp",
+      "name": "Azure",
+      "description": "Microsoft's official Azure MCP server: manage and query Azure resources.",
+      "author": "Microsoft",
+      "tags": [
+        "azure",
+        "cloud",
+        "microsoft"
+      ],
+      "source": {
+        "repo": "microsoft/mcp",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "@azure/mcp@latest",
+          "server",
+          "start"
+        ]
+      }
     },
     {
       "id": "chrome-devtools",
@@ -263,6 +425,61 @@
         "libraries",
         "code-examples"
       ]
+    },
+    {
+      "id": "elasticsearch",
+      "type": "mcp",
+      "name": "Elasticsearch",
+      "description": "Elastic's official MCP server: query indices and search your Elasticsearch data.",
+      "author": "Elastic",
+      "tags": [
+        "search",
+        "elasticsearch",
+        "data"
+      ],
+      "source": {
+        "repo": "elastic/mcp-server-elasticsearch",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "@elastic/mcp-server-elasticsearch"
+        ],
+        "env": {
+          "ES_URL": "${ES_URL}",
+          "ES_API_KEY": "${ES_API_KEY}"
+        }
+      }
+    },
+    {
+      "id": "exa",
+      "type": "mcp",
+      "name": "Exa Search",
+      "description": "Exa's official MCP server: AI-native web search, company research, and content crawling.",
+      "author": "Exa",
+      "tags": [
+        "search",
+        "web",
+        "research"
+      ],
+      "source": {
+        "repo": "exa-labs/exa-mcp-server",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "exa-mcp-server"
+        ],
+        "env": {
+          "EXA_API_KEY": "${EXA_API_KEY}"
+        }
+      }
     },
     {
       "id": "fetch",
@@ -382,6 +599,46 @@
       ]
     },
     {
+      "id": "huggingface",
+      "type": "mcp",
+      "name": "Hugging Face",
+      "description": "Hugging Face's official remote MCP server: search models, datasets, Spaces, and papers.",
+      "author": "Hugging Face",
+      "tags": [
+        "ml",
+        "models",
+        "datasets"
+      ],
+      "mcp": {
+        "type": "http",
+        "url": "https://huggingface.co/mcp"
+      }
+    },
+    {
+      "id": "kubernetes",
+      "type": "mcp",
+      "name": "Kubernetes",
+      "description": "MCP server for Kubernetes: manage pods, deployments, services, and cluster resources via kubectl.",
+      "author": "Flux159",
+      "tags": [
+        "kubernetes",
+        "devops",
+        "infrastructure"
+      ],
+      "source": {
+        "repo": "Flux159/mcp-server-kubernetes",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "mcp-server-kubernetes"
+        ]
+      }
+    },
+    {
       "id": "linear",
       "type": "mcp",
       "name": "Linear",
@@ -422,6 +679,86 @@
       ]
     },
     {
+      "id": "mongodb",
+      "type": "mcp",
+      "name": "MongoDB",
+      "description": "MongoDB's official MCP server: query collections, inspect schemas, and manage Atlas.",
+      "author": "MongoDB",
+      "tags": [
+        "database",
+        "mongodb",
+        "nosql"
+      ],
+      "source": {
+        "repo": "mongodb-js/mongodb-mcp-server",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "mongodb-mcp-server"
+        ],
+        "env": {
+          "MDB_MCP_CONNECTION_STRING": "${MDB_MCP_CONNECTION_STRING}"
+        }
+      }
+    },
+    {
+      "id": "neon",
+      "type": "mcp",
+      "name": "Neon",
+      "description": "Neon's official MCP server: manage serverless Postgres databases, branches, and queries.",
+      "author": "Neon",
+      "tags": [
+        "database",
+        "postgres",
+        "serverless"
+      ],
+      "source": {
+        "repo": "neondatabase/mcp-server-neon",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "@neondatabase/mcp-server-neon",
+          "start",
+          "${NEON_API_KEY}"
+        ]
+      }
+    },
+    {
+      "id": "netlify",
+      "type": "mcp",
+      "name": "Netlify",
+      "description": "Netlify's official MCP server: deploy sites, manage projects and environment variables.",
+      "author": "Netlify",
+      "tags": [
+        "deploy",
+        "hosting",
+        "jamstack"
+      ],
+      "source": {
+        "repo": "netlify/netlify-mcp",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "@netlify/mcp"
+        ],
+        "env": {
+          "NETLIFY_PERSONAL_ACCESS_TOKEN": "${NETLIFY_PERSONAL_ACCESS_TOKEN}"
+        }
+      }
+    },
+    {
       "id": "notion",
       "type": "mcp",
       "name": "Notion",
@@ -448,6 +785,32 @@
         "databases",
         "productivity"
       ]
+    },
+    {
+      "id": "obsidian",
+      "type": "mcp",
+      "name": "Obsidian",
+      "description": "Work with your Obsidian vault: read, search, and edit notes via the Local REST API plugin.",
+      "author": "MarkusPfundstein",
+      "tags": [
+        "notes",
+        "obsidian",
+        "knowledge"
+      ],
+      "source": {
+        "repo": "MarkusPfundstein/mcp-obsidian",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "uvx",
+        "args": [
+          "mcp-obsidian"
+        ],
+        "env": {
+          "OBSIDIAN_API_KEY": "${OBSIDIAN_API_KEY}"
+        }
+      }
     },
     {
       "id": "playwright",
@@ -627,6 +990,33 @@
       ]
     },
     {
+      "id": "tavily",
+      "type": "mcp",
+      "name": "Tavily",
+      "description": "Tavily's official MCP server: real-time web search and content extraction built for AI agents.",
+      "author": "Tavily",
+      "tags": [
+        "search",
+        "web",
+        "extraction"
+      ],
+      "source": {
+        "repo": "tavily-ai/tavily-mcp",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "tavily-mcp"
+        ],
+        "env": {
+          "TAVILY_API_KEY": "${TAVILY_API_KEY}"
+        }
+      }
+    },
+    {
       "id": "time",
       "type": "mcp",
       "name": "Time",
@@ -647,6 +1037,22 @@
         "time",
         "timezones"
       ]
+    },
+    {
+      "id": "vercel",
+      "type": "mcp",
+      "name": "Vercel",
+      "description": "Vercel's official remote MCP server: manage deployments, projects, and logs.",
+      "author": "Vercel",
+      "tags": [
+        "deploy",
+        "hosting",
+        "frontend"
+      ],
+      "mcp": {
+        "type": "http",
+        "url": "https://mcp.vercel.com"
+      }
     },
     {
       "id": "algorithmic-art",
@@ -681,6 +1087,37 @@
       ]
     },
     {
+      "id": "beautiful-article",
+      "type": "skill",
+      "name": "Beautiful Article",
+      "description": "Turn content into beautifully formatted, publication-ready articles.",
+      "author": "ConardLi",
+      "tags": [
+        "writing",
+        "formatting",
+        "content"
+      ],
+      "source": {
+        "repo": "ConardLi/garden-skills",
+        "path": "skills/beautiful-article"
+      }
+    },
+    {
+      "id": "brainstorming",
+      "type": "skill",
+      "name": "Brainstorming",
+      "description": "Superpowers brainstorming skill: structured idea generation before committing to a plan.",
+      "author": "obra",
+      "tags": [
+        "planning",
+        "ideation"
+      ],
+      "source": {
+        "repo": "obra/superpowers",
+        "path": "skills/brainstorming"
+      }
+    },
+    {
       "id": "brand-guidelines",
       "type": "skill",
       "name": "Brand Guidelines",
@@ -694,6 +1131,22 @@
         "branding",
         "design"
       ]
+    },
+    {
+      "id": "browser-testing-with-devtools",
+      "type": "skill",
+      "name": "Browser Testing with DevTools",
+      "description": "Test and debug web apps using browser DevTools: console, network, and performance panels.",
+      "author": "Addy Osmani",
+      "tags": [
+        "testing",
+        "browser",
+        "devtools"
+      ],
+      "source": {
+        "repo": "addyosmani/agent-skills",
+        "path": "skills/browser-testing-with-devtools"
+      }
     },
     {
       "id": "canvas-design",
@@ -710,6 +1163,22 @@
         "graphics",
         "visual"
       ]
+    },
+    {
+      "id": "ci-cd-and-automation",
+      "type": "skill",
+      "name": "CI/CD & Automation",
+      "description": "Design reliable CI/CD pipelines: build, test, deploy stages and automation best practices.",
+      "author": "Addy Osmani",
+      "tags": [
+        "cicd",
+        "automation",
+        "devops"
+      ],
+      "source": {
+        "repo": "addyosmani/agent-skills",
+        "path": "skills/ci-cd-and-automation"
+      }
     },
     {
       "id": "claude-api",
@@ -742,6 +1211,21 @@
         "quality",
         "engineering"
       ]
+    },
+    {
+      "id": "code-simplification",
+      "type": "skill",
+      "name": "Code Simplification",
+      "description": "Simplify and reduce code: remove needless complexity while preserving behavior.",
+      "author": "Addy Osmani",
+      "tags": [
+        "refactoring",
+        "simplicity"
+      ],
+      "source": {
+        "repo": "addyosmani/agent-skills",
+        "path": "skills/code-simplification"
+      }
     },
     {
       "id": "context-engineering",
@@ -825,6 +1309,68 @@
       ]
     },
     {
+      "id": "frontend-ui-engineering",
+      "type": "skill",
+      "name": "Frontend UI Engineering",
+      "description": "Build robust frontend interfaces: component architecture, state, styling, and performance.",
+      "author": "Addy Osmani",
+      "tags": [
+        "frontend",
+        "ui",
+        "engineering"
+      ],
+      "source": {
+        "repo": "addyosmani/agent-skills",
+        "path": "skills/frontend-ui-engineering"
+      }
+    },
+    {
+      "id": "golang-concurrency",
+      "type": "skill",
+      "name": "Go Concurrency",
+      "description": "Write correct concurrent Go: goroutines, channels, sync primitives, and race avoidance.",
+      "author": "samber",
+      "tags": [
+        "golang",
+        "concurrency"
+      ],
+      "source": {
+        "repo": "samber/cc-skills-golang",
+        "path": "skills/golang-concurrency"
+      }
+    },
+    {
+      "id": "golang-design-patterns",
+      "type": "skill",
+      "name": "Go Design Patterns",
+      "description": "Go-idiomatic design patterns: interfaces, composition, and functional options.",
+      "author": "samber",
+      "tags": [
+        "golang",
+        "patterns",
+        "architecture"
+      ],
+      "source": {
+        "repo": "samber/cc-skills-golang",
+        "path": "skills/golang-design-patterns"
+      }
+    },
+    {
+      "id": "golang-error-handling",
+      "type": "skill",
+      "name": "Go Error Handling",
+      "description": "Idiomatic Go error handling: wrapping, sentinel errors, and errors.Is/As patterns.",
+      "author": "samber",
+      "tags": [
+        "golang",
+        "errors"
+      ],
+      "source": {
+        "repo": "samber/cc-skills-golang",
+        "path": "skills/golang-error-handling"
+      }
+    },
+    {
       "id": "internal-comms",
       "type": "skill",
       "name": "Internal Comms",
@@ -839,6 +1385,22 @@
         "communication",
         "business"
       ]
+    },
+    {
+      "id": "kb-retriever",
+      "type": "skill",
+      "name": "Knowledge Base Retriever",
+      "description": "Retrieve and synthesize answers from local knowledge bases and document collections.",
+      "author": "ConardLi",
+      "tags": [
+        "knowledge",
+        "retrieval",
+        "rag"
+      ],
+      "source": {
+        "repo": "ConardLi/garden-skills",
+        "path": "skills/kb-retriever"
+      }
     },
     {
       "id": "mcp-builder",
@@ -921,6 +1483,21 @@
       ]
     },
     {
+      "id": "systematic-debugging",
+      "type": "skill",
+      "name": "Systematic Debugging",
+      "description": "Superpowers debugging methodology: root-cause tracing, condition-based waiting, and defense in depth.",
+      "author": "obra",
+      "tags": [
+        "debugging",
+        "methodology"
+      ],
+      "source": {
+        "repo": "obra/superpowers",
+        "path": "skills/systematic-debugging"
+      }
+    },
+    {
       "id": "taste-skill",
       "type": "skill",
       "name": "Taste Skill",
@@ -936,6 +1513,21 @@
         "taste",
         "frontend"
       ]
+    },
+    {
+      "id": "test-driven-development",
+      "type": "skill",
+      "name": "Test-Driven Development",
+      "description": "Superpowers TDD skill: strict red-green-refactor discipline for AI-assisted coding.",
+      "author": "obra",
+      "tags": [
+        "testing",
+        "tdd"
+      ],
+      "source": {
+        "repo": "obra/superpowers",
+        "path": "skills/test-driven-development"
+      }
     },
     {
       "id": "theme-factory",
@@ -1000,6 +1592,21 @@
         "playwright",
         "web"
       ]
+    },
+    {
+      "id": "writing-plans",
+      "type": "skill",
+      "name": "Writing Plans",
+      "description": "Superpowers planning skill: turn goals into executable, verifiable implementation plans.",
+      "author": "obra",
+      "tags": [
+        "planning",
+        "workflow"
+      ],
+      "source": {
+        "repo": "obra/superpowers",
+        "path": "skills/writing-plans"
+      }
     },
     {
       "id": "xlsx",

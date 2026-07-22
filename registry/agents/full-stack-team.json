@@ -1,0 +1,16 @@
+{
+  "id": "full-stack-team",
+  "type": "agent",
+  "name": "Full-Stack Team",
+  "description": "lst97's coordinated subagent team for full-stack development work.",
+  "author": "lst97",
+  "tags": [
+    "fullstack",
+    "team",
+    "development"
+  ],
+  "source": {
+    "repo": "lst97/claude-code-sub-agents",
+    "path": "agents"
+  }
+}

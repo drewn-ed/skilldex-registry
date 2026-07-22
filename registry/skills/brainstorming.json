@@ -1,0 +1,15 @@
+{
+  "id": "brainstorming",
+  "type": "skill",
+  "name": "Brainstorming",
+  "description": "Superpowers brainstorming skill: structured idea generation before committing to a plan.",
+  "author": "obra",
+  "tags": [
+    "planning",
+    "ideation"
+  ],
+  "source": {
+    "repo": "obra/superpowers",
+    "path": "skills/brainstorming"
+  }
+}

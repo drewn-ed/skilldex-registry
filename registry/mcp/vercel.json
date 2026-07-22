@@ -1,0 +1,16 @@
+{
+  "id": "vercel",
+  "type": "mcp",
+  "name": "Vercel",
+  "description": "Vercel's official remote MCP server: manage deployments, projects, and logs.",
+  "author": "Vercel",
+  "tags": [
+    "deploy",
+    "hosting",
+    "frontend"
+  ],
+  "mcp": {
+    "type": "http",
+    "url": "https://mcp.vercel.com"
+  }
+}

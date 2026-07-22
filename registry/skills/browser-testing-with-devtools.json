@@ -1,0 +1,16 @@
+{
+  "id": "browser-testing-with-devtools",
+  "type": "skill",
+  "name": "Browser Testing with DevTools",
+  "description": "Test and debug web apps using browser DevTools: console, network, and performance panels.",
+  "author": "Addy Osmani",
+  "tags": [
+    "testing",
+    "browser",
+    "devtools"
+  ],
+  "source": {
+    "repo": "addyosmani/agent-skills",
+    "path": "skills/browser-testing-with-devtools"
+  }
+}

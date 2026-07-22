@@ -1,0 +1,16 @@
+{
+  "id": "studio-product",
+  "type": "agent",
+  "name": "Studio Product Agents",
+  "description": "Contains Studio's product subagents: feedback synthesis, prioritization, and sprint planning.",
+  "author": "Contains Studio",
+  "tags": [
+    "product",
+    "planning",
+    "feedback"
+  ],
+  "source": {
+    "repo": "contains-studio/agents",
+    "path": "product"
+  }
+}

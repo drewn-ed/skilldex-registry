@@ -1,0 +1,15 @@
+{
+  "id": "systematic-debugging",
+  "type": "skill",
+  "name": "Systematic Debugging",
+  "description": "Superpowers debugging methodology: root-cause tracing, condition-based waiting, and defense in depth.",
+  "author": "obra",
+  "tags": [
+    "debugging",
+    "methodology"
+  ],
+  "source": {
+    "repo": "obra/superpowers",
+    "path": "skills/systematic-debugging"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "aws-docs",
+  "type": "mcp",
+  "name": "AWS Documentation",
+  "description": "AWS Labs' official documentation MCP server: search and read AWS docs.",
+  "author": "AWS Labs",
+  "tags": [
+    "aws",
+    "documentation",
+    "cloud"
+  ],
+  "source": {
+    "repo": "awslabs/mcp",
+    "path": "src/aws-documentation-mcp-server"
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "uvx",
+    "args": [
+      "awslabs.aws-documentation-mcp-server@latest"
+    ]
+  }
+}

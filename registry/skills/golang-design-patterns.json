@@ -1,0 +1,16 @@
+{
+  "id": "golang-design-patterns",
+  "type": "skill",
+  "name": "Go Design Patterns",
+  "description": "Go-idiomatic design patterns: interfaces, composition, and functional options.",
+  "author": "samber",
+  "tags": [
+    "golang",
+    "patterns",
+    "architecture"
+  ],
+  "source": {
+    "repo": "samber/cc-skills-golang",
+    "path": "skills/golang-design-patterns"
+  }
+}

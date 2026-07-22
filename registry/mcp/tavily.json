@@ -1,0 +1,27 @@
+{
+  "id": "tavily",
+  "type": "mcp",
+  "name": "Tavily",
+  "description": "Tavily's official MCP server: real-time web search and content extraction built for AI agents.",
+  "author": "Tavily",
+  "tags": [
+    "search",
+    "web",
+    "extraction"
+  ],
+  "source": {
+    "repo": "tavily-ai/tavily-mcp",
+    "path": "."
+  },
+  "mcp": {
+    "type": "stdio",
+    "command": "npx",
+    "args": [
+      "-y",
+      "tavily-mcp"
+    ],
+    "env": {
+      "TAVILY_API_KEY": "${TAVILY_API_KEY}"
+    }
+  }
+}

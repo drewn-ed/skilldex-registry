@@ -1,0 +1,16 @@
+{
+  "id": "studio-engineering",
+  "type": "agent",
+  "name": "Studio Engineering Agents",
+  "description": "Contains Studio's engineering subagents: rapid prototyping, backend, frontend, mobile, and AI engineers.",
+  "author": "Contains Studio",
+  "tags": [
+    "engineering",
+    "prototyping",
+    "startup"
+  ],
+  "source": {
+    "repo": "contains-studio/agents",
+    "path": "engineering"
+  }
+}
