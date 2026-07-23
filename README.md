@@ -155,6 +155,7 @@ in an entry — use `${VAR}` placeholders (CI rejects anything that looks like a
 | `obsidian` | Work with your Obsidian vault: read, search, and edit notes via the Local REST API plugin. | [MarkusPfundstein/mcp-obsidian](https://github.com/MarkusPfundstein/mcp-obsidian) |
 | `playwright` | Microsoft's official MCP server for browser automation: navigate, click, fill forms, and capture accessibility snapshots. | [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp) |
 | `postgres` | Postgres MCP Pro: safe SQL access, index tuning, explain plans, and database health checks. | [crystaldba/postgres-mcp](https://github.com/crystaldba/postgres-mcp) |
+| `ruflo` | Agent meta-harness MCP server: swarm coordination, adaptive memory, and autonomous workflows. Full platform installs via 'npx ruflo init'. | [ruvnet/ruflo](https://github.com/ruvnet/ruflo) |
 | `sentry` | Sentry's official remote MCP server: query issues, errors, and performance data. | [getsentry/sentry-mcp](https://github.com/getsentry/sentry-mcp) |
 | `sequential-thinking` | Reference MCP server for structured, revisable step-by-step reasoning chains. | [modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) |
 | `serena` | Coding-agent toolkit MCP server: semantic code retrieval and editing via language servers. | [oraios/serena](https://github.com/oraios/serena) |

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "count": 119,
+  "count": 120,
   "entries": [
     {
       "id": "accessibility-compliance",
@@ -1277,6 +1277,33 @@
         "database",
         "postgres",
         "sql"
+      ]
+    },
+    {
+      "id": "ruflo",
+      "type": "mcp",
+      "name": "Ruflo",
+      "description": "Agent meta-harness MCP server: swarm coordination, adaptive memory, and autonomous workflows. Full platform installs via 'npx ruflo init'.",
+      "source": {
+        "repo": "ruvnet/ruflo",
+        "path": "."
+      },
+      "mcp": {
+        "type": "stdio",
+        "command": "npx",
+        "args": [
+          "-y",
+          "ruflo@latest",
+          "mcp",
+          "start"
+        ]
+      },
+      "author": "ruvnet",
+      "tags": [
+        "swarm",
+        "orchestration",
+        "memory",
+        "multi-agent"
       ]
     },
     {
